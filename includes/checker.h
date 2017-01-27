@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/26 19:13:22 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 14:43:44 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CHECKER_H
 
 # include "../libft/libft.h"
+# include "checker_struct.h"
 
 # define SA "sa"
 # define SB "sb"
@@ -27,12 +28,8 @@
 # define RRB "RRB"
 # define RRR "rrr"
 
-typedef struct	s_checker
-{
-	char		*stack_a;
-}				t_checker;
+int	ft_checker_format(t_checker *checker);
 
-int	ft_checker_format();
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait
 rien s’il n’y en a qu’un ou aucun.

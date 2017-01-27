@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker_format.c                                :+:      :+:    :+:   */
+/*   ft_tabnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/26 19:10:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 14:42:16 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/01/27 10:18:17 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/01/27 10:18:44 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "libft.h"
 
-int	ft_checker_format(t_checker *checker)
+int	*ft_tabnew(size_t size)
 {
-	int	i;
-	int	j;
+	int	*str;
 
-	i = 0;
-	while (checker->argum[i])
-	{
-		j = 0;
-		while (checker->argum[i][j])
-		{
-			if (!ft_isdigit(checker->argum[i][j]))
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (!(str = (int*)malloc(sizeof(*str) * (size + 1))))
+		return (NULL);
+	ft_bzero(str, size + 1);
+	return (str);
 }

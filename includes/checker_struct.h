@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker_format.c                                :+:      :+:    :+:   */
+/*   checker_struct.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/26 19:10:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 14:42:16 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/01/27 14:43:01 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/01/27 14:44:28 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#ifndef CHECKER_STRUCT_H
+# define CHECKER_STRUCT_H
 
-int	ft_checker_format(t_checker *checker)
+typedef struct	s_checker
 {
-	int	i;
-	int	j;
+	char		**argum;
+	int			*stack_a;
+}				t_checker;
 
-	i = 0;
-	while (checker->argum[i])
-	{
-		j = 0;
-		while (checker->argum[i][j])
-		{
-			if (!ft_isdigit(checker->argum[i][j]))
-				return (-1);
-			j++;
-		}
-		i++;
-	}
-	return (0);
-}
+typedef struct	s_index
+{
+	int			i;
+	int			j;
+}				t_index;
+#endif

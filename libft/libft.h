@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 10:45:03 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/23 11:53:58 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 10:19:47 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ int					ft_max(int *tab, unsigned int len);
 size_t				ft_tabintlen(int *tab);
 char				**ft_strnew_two(int x, int y);
 char				***ft_strnew_three(int x, int y, int z);
+int					*ft_tabnew(size_t size);
 int					**ft_tabnew_two(int x, int y);
 int					***ft_tabnew_three(int x, int y, int z);
 int					ft_nbrlen(long long int nb);

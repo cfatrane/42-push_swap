@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/01/26 19:12:49 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/01/27 14:20:14 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,13 +31,13 @@ SRC_NAME_CHECKER = 	main.c				\
 
 SRC_NAME_PUSH_SWAP = 	main.c				\
 
-OBJ_NAME = $(SRC_NAME:.c=.o)
+OBJ_NAME_CHECKER = $(SRC_NAME_CHECKER:.c=.o)
 
 # Files
 
-SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+SRC_CHECKER = $(addprefix $(SRC_PATH)/,$(SRC_NAME_CHECKER))
 
-OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
+OBJ_CHECKER = $(addprefix $(OBJ_PATH), $(OBJ_NAME_CHECKER))
 
 # Flags
 
@@ -51,13 +51,13 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Rules
 
-all: $(NAME)
+all: $(NAME_C)
 
-$(NAME): $(OBJ)
+$(NAME_C): $(OBJ_CHECKER)
 	@make -C./libft/
-	@echo "\033[34mCreation of $(NAME) ...\033[0m"
-	@$(CC) $(LDFLAGS) $(LFT) $(OBJ) -o $@
-	@echo "\033[32m$(NAME) created\n\033[0m"
+	@echo "\033[34mCreation of $(NAME_C) ...\033[0m"
+	@$(CC) $(LDFLAGS) $(LFT) $(OBJ_CHECKER) -o $@
+	@echo "\033[32m$(NAME_C) created\n\033[0m"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
@@ -65,16 +65,16 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 
 clean:
 	@make clean -C ./libft/
-	@echo "\033[33mRemoval of .o files of $(NAME) ...\033[0m"
-	@rm -f $(OBJ)
+	@echo "\033[33mRemoval of .o files of $(NAME_C) ...\033[0m"
+	@rm -f $(OBJ_CHECKER)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[31mFiles .o deleted\n\033[0m"
 
 fclean: clean
 	@make fclean -C ./libft/
-	@echo "\033[33mRemoval of $(NAME)...\033[0m"
-	@rm -f $(NAME)
-	@echo "\033[31mBinary $(NAME) deleted\n\033[0m"
+	@echo "\033[33mRemoval of $(NAME_C)...\033[0m"
+	@rm -f $(NAME_C)
+	@echo "\033[31mBinary $(NAME_C) deleted\n\033[0m"
 
 re: fclean all
 
