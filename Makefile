@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/01/27 14:20:14 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/01/27 16:54:02 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ INC_PATH = -I./includes/
 # Name
 
 SRC_NAME_CHECKER = 	main.c				\
-					ft_checker_format	\
 
 SRC_NAME_PUSH_SWAP = 	main.c				\
 

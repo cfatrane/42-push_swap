@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_checker_convert.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 11:53:55 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 15:27:46 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/01/27 16:55:07 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/01/27 16:55:15 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int	ft_swap_a(t_checker *checker)
+int	ft_checker_convert(t_checker *checker)
 {
-	ft_putendl(SA);
-//	get_next_line(0, &checker->line);
-	return (0);
-}
+	int	i;
+	int	j;
+	int	tmp;
 
-int	ft_swap_b(t_checker *checker)
-{
-	ft_putendl(SB);
-	return (0);
-}
-
-int	ft_swap_s(t_checker *checker)
-{
-	ft_putendl(SS);
+	i = 0;
+	while (checker->argum[i])
+	{
+		checker->stack_a[i] = ft_atoi(checker->argum[i]);
+		i++;
+	}
+	checker->stack_a[i] = '\0';
 	return (0);
 }

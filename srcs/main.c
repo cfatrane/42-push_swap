@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:59:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 14:47:02 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 19:23:54 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char **argv)
 {
 	int			i;
 	int			j;
-	char		*line;
+	//char		*line;
 	t_checker	*checker;
 
 	i = 1;
@@ -24,8 +24,8 @@ int	main(int argc, char **argv)
 	checker = ft_memalloc(sizeof(t_checker));
 	if (!(checker->argum = ft_strnew_two(argc - 1, 1)))
 		return (-1);
-//	if (!(checker->argum = ((char**)malloc(sizeof(*checker->argum) * (argc + 1)))))
-//		return (-1);
+	if (!(checker->stack_a = ft_tabnew(argc - 1)))
+		return (-1);
 	while (i < argc)
 	{
 		checker->argum[j] = ft_strdup(argv[i]);
@@ -35,15 +35,11 @@ int	main(int argc, char **argv)
 		j++;
 	}
 	checker->argum[j] = NULL;
-	if (ft_checker_format(checker) == -1)
+	if (ft_checker_format(checker) == -1 || ft_checker_doublon(checker) == -1)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);
 	}
-	while (get_next_line(0, &line))
-	{
-		if (ft_strcmp(line, "") == 0)
-			exit(0);
-	}
+	ft_checker(checker);
 	return (0);
 }

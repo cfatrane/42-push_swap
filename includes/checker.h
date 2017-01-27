@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 14:43:44 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 16:13:47 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,25 @@
 # define RRB "RRB"
 # define RRR "rrr"
 
+int	ft_checker(t_checker *checker);
+
 int	ft_checker_format(t_checker *checker);
+int	ft_checker_doublon(t_checker *checker);
+
+int	ft_swap_a(t_checker *checker);
+int	ft_swap_b(t_checker *checker);
+int	ft_swap_s(t_checker *checker);
+
+int	ft_push_a(t_checker *checker);
+int	ft_push_b(t_checker *checker);
+
+int	ft_rotate_a(t_checker *checker);
+int	ft_rotate_b(t_checker *checker);
+int	ft_rotate_r(t_checker *checker);
+
+int	ft_reverse_rotate_a(t_checker *checker);
+int	ft_reverse_rotate_b(t_checker *checker);
+int	ft_reverse_rotate_r(t_checker *checker);
 
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait
@@ -61,4 +79,5 @@ la pile b. Le dernier élément devient le premier.
 
 rrr : rra et rrb en même temps.
 */
+
 #endif
