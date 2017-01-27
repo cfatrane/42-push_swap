@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:59:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 19:23:54 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 19:41:37 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv)
 		j++;
 	}
 	checker->argum[j] = NULL;
-	if (ft_checker_format(checker) == -1 || ft_checker_doublon(checker) == -1)
+	if (ft_checker_error(checker) == -1)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);
