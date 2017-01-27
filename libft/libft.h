@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 10:45:03 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 20:24:46 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 20:29:41 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,6 @@ int					ft_nbrlen_uns(unsigned long long int nb);
 
 int					ft_nbcmp_min(int nb1, int nb2);
 int					ft_nbcmp_max(int nb1, int nb2);
-
 
 int					ft_size_tab_base(size_t n, int base);
 int					ft_count_words_sep(char const *s, char c);

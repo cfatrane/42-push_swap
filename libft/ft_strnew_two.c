@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/20 11:36:53 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 20:12:54 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 20:28:15 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	**ft_strnew_two(size_t x, size_t y)
 {
-	int		i;
+	size_t	i;
 	char	**tab;
 
 	i = -1;

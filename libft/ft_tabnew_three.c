@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 14:24:48 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/21 14:24:55 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/27 20:29:08 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	***ft_tabnew_three(int x, int y, int z)
 {
-	int	i;
-	int j;
-	int	***tab;
+	size_t	i;
+	size_t	j;
+	int		***tab;
 
 	i = -1;
 	if (!(tab = (int***)malloc(sizeof(*tab) * y)))
