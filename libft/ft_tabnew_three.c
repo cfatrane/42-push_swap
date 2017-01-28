@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 14:24:48 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 20:29:08 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/28 11:54:20 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	***ft_tabnew_three(int x, int y, int z)
+int	***ft_tabnew_three(size_t x, size_t y, size_t z)
 {
 	size_t	i;
 	size_t	j;

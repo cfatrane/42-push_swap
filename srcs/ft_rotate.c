@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:54:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 15:27:56 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/28 15:23:30 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 
 int	ft_rotate_a(t_checker *checker)
 {
+	int	i;
+	int	tmp;
+
+	i = 0;
+	tmp = checker->stack_a[0];
+	checker->stack_a[0] = checker->stack_a[1];
+	checker->stack_a[1] = tmp;
+	while (checker->stack_a[i])
+	{
+		printf("Nbr vaut %d a i vaut %d apres swap a\n", checker->stack_a[i], i);
+		i++;
+	}
 	ft_putendl(RA);
 	return (0);
 }

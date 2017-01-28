@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:53:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 15:26:58 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/28 17:08:51 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,19 @@
 
 int	ft_checker(t_checker *checker)
 {
+	ft_checker_convert(checker);
 	while (get_next_line(0, &checker->line))
 	{
-		if (ft_strcmp(checker->line, SA) == 0)
+		if (ft_strcmp(checker->line, SA) == 0 && checker->size_a > 1)
 		{
 			ft_swap_a(checker);
-		//	get_next_line(0, &checker->line);
+			//	get_next_line(0, &checker->line);
 		}
-			if (ft_strcmp(checker->line, SB) == 0)
+		if (ft_strcmp(checker->line, SB) == 0 && checker->size_b > 1)
 		{
 			ft_swap_b(checker);
 		}
-		if (ft_strcmp(checker->line, SS) == 0)
+		if (ft_strcmp(checker->line, SS) == 0 && checker->size_a > 1 && checker->size_b > 1)
 		{
 			ft_swap_s(checker);
 		}

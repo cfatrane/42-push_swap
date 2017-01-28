@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 19:40:44 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/28 15:09:19 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@
 int	ft_checker(t_checker *checker);
 
 int	ft_checker_error(t_checker *checker);
-int	ft_checker_format(t_checker *checker);
-int	ft_checker_doublon(t_checker *checker);
 
+int	ft_checker_convert(t_checker *checker);
 int	ft_swap_a(t_checker *checker);
 int	ft_swap_b(t_checker *checker);
 int	ft_swap_s(t_checker *checker);

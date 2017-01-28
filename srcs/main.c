@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:59:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/27 20:33:57 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/28 15:16:18 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ int	main(int argc, char **argv)
 
 	i = 1;
 	j = 0;
+	if (argc == 1)
+		return (-1);
 	checker = ft_memalloc(sizeof(t_checker));
 	checker->argc = argc;
-	if (!(checker->argum = ft_strnew_two(argc - 1, 1)))
+	if (!(checker->argum = ft_strnew_two(1, argc)))
 		return (-1);
 	while (i < argc)
 	{
