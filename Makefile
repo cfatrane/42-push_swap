@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/01/27 16:54:02 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/01/29 18:28:25 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ all: $(NAME_C)
 
 $(NAME_C): $(OBJ_CHECKER)
 	@make -C./libft/
+	@make -C./ft_printf/
 	@echo "\033[34mCreation of $(NAME_C) ...\033[0m"
 	@$(CC) $(LDFLAGS) $(LFT) $(OBJ_CHECKER) -o $@
 	@echo "\033[32m$(NAME_C) created\n\033[0m"
@@ -64,6 +65,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 
 clean:
 	@make clean -C ./libft/
+	@make clean -C ./ft_printf/
 	@echo "\033[33mRemoval of .o files of $(NAME_C) ...\033[0m"
 	@rm -f $(OBJ_CHECKER)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
@@ -71,6 +73,7 @@ clean:
 
 fclean: clean
 	@make fclean -C ./libft/
+	@make fclean -C ./ft_printf/
 	@echo "\033[33mRemoval of $(NAME_C)...\033[0m"
 	@rm -f $(NAME_C)
 	@echo "\033[31mBinary $(NAME_C) deleted\n\033[0m"

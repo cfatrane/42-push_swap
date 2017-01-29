@@ -6,33 +6,24 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 16:54:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/28 15:05:55 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/29 18:29:45 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int	ft_checker_format(t_checker *checker)
+int	ft_checker_format(char *av)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (checker->argum[i])
+	while (*av)
 	{
-		j = 0;
-		while (checker->argum[i][j])
-		{
-			if (!ft_isdigit(checker->argum[i][j]))
-				return (-1);
-			j++;
-		}
-		i++;
+		if (!ft_isdigit(*av))
+			return (-1);
+		av++;
 	}
 	return (0);
 }
-
-int	ft_checker_doublon(t_checker *checker)
+/*
+int	ft_checker_doublon(t_tmp *stack_a)
 {
 	int		i;
 	int		j;
@@ -53,26 +44,10 @@ int	ft_checker_doublon(t_checker *checker)
 	}
 	return (0);
 }
-
-int	ft_checker_max(t_checker *checker)
+*/
+int	ft_checker_max(size_t av)
 {
-	int	i;
-
-	i = 0;
-	while (checker->argum[i])
-	{
-		if (ft_atoll(checker->argum[i]) > INT_MAX)
-			return (-1);
-		i++;
-	}
-	return (0);
-}
-
-int	ft_checker_error(t_checker *checker)
-{
-	if (ft_checker_format(checker) == -1 ||
-			ft_checker_doublon(checker) == -1 ||
-			ft_checker_max(checker) == -1)
+	if (av > INT_MAX)
 		return (-1);
 	return (0);
 }

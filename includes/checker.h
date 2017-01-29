@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/28 15:09:19 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/29 18:16:07 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CHECKER_H
 
 # include "../libft/libft.h"
+# include "../ft_printf/includes/ft_printf.h"
 # include "checker_struct.h"
 
 # define SA "sa"
@@ -28,26 +29,29 @@
 # define RRB "rrb"
 # define RRR "rrr"
 
-int	ft_checker(t_checker *checker);
+int	ft_checker(t_stack *stack_a, t_stack *stack_b);
 
-int	ft_checker_error(t_checker *checker);
+int	ft_checker_format(char *av);
+int	ft_checker_max(size_t av);
 
 int	ft_checker_convert(t_checker *checker);
-int	ft_swap_a(t_checker *checker);
-int	ft_swap_b(t_checker *checker);
-int	ft_swap_s(t_checker *checker);
 
-int	ft_push_a(t_checker *checker);
-int	ft_push_b(t_checker *checker);
+int	ft_swap_a(t_stack *stack_a);
+int	ft_swap_b(t_stack *stack_b);
+int	ft_swap_s(t_stack *stack_a, t_stack *stack_b);
 
-int	ft_rotate_a(t_checker *checker);
-int	ft_rotate_b(t_checker *checker);
-int	ft_rotate_r(t_checker *checker);
+int	ft_push_a(t_stack *stack_a, t_stack *stack_b);
+int	ft_push_b(t_stack *stack_a, t_stack *stack_b);
 
-int	ft_reverse_rotate_a(t_checker *checker);
-int	ft_reverse_rotate_b(t_checker *checker);
-int	ft_reverse_rotate_r(t_checker *checker);
+int	ft_rotate_a(t_stack *stack_a);
+int	ft_rotate_b(t_stack *stack_b);
+int	ft_rotate_r(t_stack *stack_a, t_stack *stack_b);
 
+int	ft_reverse_rotate_a(t_stack *stack_a);
+int	ft_reverse_rotate_b(t_stack *stack_b);
+int	ft_reverse_rotate_r(t_stack *stack_a, t_stack *stack_b);
+
+size_t	ft_list_size_stack(t_stack *begin_list);
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait
 rien s’il n’y en a qu’un ou aucun.

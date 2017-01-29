@@ -6,40 +6,73 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:59:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/28 15:16:18 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/29 18:32:22 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int	main(int argc, char **argv)
+static t_stack	*ft_create_elem_checker(size_t nbr)
+{
+	t_stack	*stack;
+
+	stack = (t_stack*)malloc(sizeof(*stack));
+	stack->nbr = nbr;
+	stack->next = NULL;
+	return (stack);
+}
+
+static void			ft_list_push_back_checker(t_stack **stack, size_t nbr)
+{
+	if (*stack)
+	{
+		if ((*stack)->next)
+			ft_list_push_back_checker(&(*stack)->next, nbr);
+		else
+			(*stack)->next = ft_create_elem_checker(nbr);
+	}
+	else
+		*stack = ft_create_elem_checker(nbr);
+}
+
+static t_stack	*ft_list_push_params_checker(int ac, char **av)
 {
 	int			i;
-	int			j;
-	t_checker	*checker;
+	t_stack		*list;
 
+	list = NULL;
 	i = 1;
-	j = 0;
+	if (ac)
+	{
+		while (i < ac)
+		{
+			if (ft_checker_format(av[i]) == -1 || ft_checker_max(ft_atoll(av[i])) == -1)
+				return (NULL);
+			ft_list_push_back_checker(&list, ft_atoll(av[i]));
+			i++;
+		}
+	}
+	return (list);
+}
+
+int					main(int argc, char **argv)
+{
+	t_stack	*stack_a;
+	t_stack	*stack_b;
+
 	if (argc == 1)
 		return (-1);
-	checker = ft_memalloc(sizeof(t_checker));
-	checker->argc = argc;
-	if (!(checker->argum = ft_strnew_two(1, argc)))
-		return (-1);
-	while (i < argc)
-	{
-		checker->argum[j] = ft_strdup(argv[i]);
-		//	if (checker->argum[j] == '\0')
-		//		return (-1);
-		i++;
-		j++;
-	}
-	checker->argum[j] = NULL;
-	if (ft_checker_error(checker) == -1)
+	if ((stack_a = ft_list_push_params_checker(argc, argv)) == NULL)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);
 	}
-	ft_checker(checker);
+	while (stack_a != NULL)
+	{
+		ft_printf("Content = %d ", stack_a->nbr);
+		stack_a = stack_a->next;
+	}
+	ft_putchar('\n');
+	ft_checker(stack_a, stack_b);
 	return (0);
 }
