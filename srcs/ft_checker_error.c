@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 16:54:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/29 18:29:45 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/29 18:40:17 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int	ft_checker_format(char *av)
+int	ft_stack_format(char *av)
 {
 	while (*av)
 	{
@@ -23,20 +23,20 @@ int	ft_checker_format(char *av)
 	return (0);
 }
 /*
-int	ft_checker_doublon(t_tmp *stack_a)
+int	ft_stack_doublon(t_tmp *stack_a)
 {
 	int		i;
 	int		j;
 	char	*tmp;
 
 	i = 0;
-	while (checker->argum[i])
+	while (stack->argum[i])
 	{
 		j = i + 1;
-		tmp = checker->argum[i];
-		while (checker->argum[j])
+		tmp = stack->argum[i];
+		while (stack->argum[j])
 		{
-			if (ft_strcmp(tmp, checker->argum[j]) == 0)
+			if (ft_strcmp(tmp, stack->argum[j]) == 0)
 				return (-1);
 			j++;
 		}
@@ -45,7 +45,7 @@ int	ft_checker_doublon(t_tmp *stack_a)
 	return (0);
 }
 */
-int	ft_checker_max(size_t av)
+int	ft_stack_max(size_t av)
 {
 	if (av > INT_MAX)
 		return (-1);

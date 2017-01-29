@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_size.c                                     :+:      :+:    :+:   */
+/*   ft_utils.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/28 18:39:10 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/28 18:40:54 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/01/29 18:44:49 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/01/29 19:20:56 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/checker.h"
 
-size_t	ft_list_size(t_list *begin_list)
+size_t	ft_list_size_stack(t_stack *stack)
 {
-	if (begin_list == NULL)
+	if (stack == NULL)
 		return (0);
-	return (ft_list_size(begin_list->next) + 1);
+	return (ft_list_size_stack(stack->next) + 1);
+}
+
+t_stack	*ft_list_at_stack(t_stack *stack, unsigned int nbr)
+{
+	if (stack == NULL)
+		return (NULL);
+	if (nbr == 1 && stack->next == NULL)
+		return (NULL);
+	if (nbr == 0)
+		return (stack);
+	else
+		return (ft_list_at_stack(stack->next, nbr - 1));
 }
