@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 18:44:49 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 16:20:38 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 16:22:23 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	ft_list_delone_front_stack_a(t_checker *checker)
 		exit(EXIT_FAILURE);
 	if (checker->stack_a != NULL)
 	{
-		to_free  = checker->stack_a;
+		to_free = checker->stack_a;
 		checker->stack_a = checker->stack_a->next;
 		free(to_free);
 	}
@@ -41,7 +41,7 @@ void	ft_list_delone_front_stack_b(t_checker *checker)
 		exit(EXIT_FAILURE);
 	if (checker->stack_b != NULL)
 	{
-		to_free  = checker->stack_b;
+		to_free = checker->stack_b;
 		checker->stack_b = checker->stack_b->next;
 		free(to_free);
 	}
