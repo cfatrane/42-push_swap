@@ -6,61 +6,68 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:53:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/29 19:19:34 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 15:10:46 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-int	ft_checker(t_stack *stack_a, t_stack *stack_b)
+void	ft_size(t_checker *checker)
 {
+	checker->size_a = ft_list_size_stack(checker->stack_a);
+	checker->size_b = ft_list_size_stack(checker->stack_b);
+}
+
+int	ft_checker(t_checker *checker)
+{
+	ft_size(checker);
 	char	*line;
 	while (get_next_line(0, &line))
 	{
-		if (ft_strcmp(line, SA) == 0/* && ft_list_size_stack(stack_a) > 1*/)
+		if (ft_strcmp(line, SA) == 0)
 		{
-			ft_swap_a(stack_a);
+			ft_swap_a(checker);
 			//	get_next_line(0, &->line);
 		}
-		if (ft_strcmp(line, SB) == 0/* && ft_list_size_stack(stack_b) > 1*/)
+		if (ft_strcmp(line, SB) == 0)
 		{
-			ft_swap_b(stack_b);
+			ft_swap_b(checker);
 		}
-		if (ft_strcmp(line, SS) == 0/* && ft_list_size_stack(stack_a) > 1 && ft_list_size_stack(stack_b) > 1*/)
+		if (ft_strcmp(line, SS) == 0/* && ft_list_size_stack(checker->stack_a) > 1 && ft_list_size_stack(checker->stack_b) > 1*/)
 		{
-			ft_swap_s(stack_a, stack_b);
+			ft_swap_s(checker);
 		}
 		if (ft_strcmp(line, PA) == 0)
 		{
-			ft_push_a(stack_a, stack_b);
+			ft_push_a(checker);
 		}
 		if (ft_strcmp(line, PB) == 0)
 		{
-			ft_push_b(stack_a, stack_b);
+			ft_push_b(checker);
 		}
 		if (ft_strcmp(line, RA) == 0)
 		{
-			ft_rotate_a(stack_a);
+			ft_rotate_a(checker);
 		}
 		if (ft_strcmp(line, RB) == 0)
 		{
-			ft_rotate_b(stack_b);
+			ft_rotate_b(checker);
 		}
 		if (ft_strcmp(line, RR) == 0)
 		{
-			ft_rotate_r(stack_a, stack_b);
+			ft_rotate_r(checker);
 		}
 		if (ft_strcmp(line, RRA) == 0)
 		{
-			ft_reverse_rotate_a(stack_a);
+			ft_reverse_rotate_a(checker);
 		}
 		if (ft_strcmp(line, RRB) == 0)
 		{
-			ft_reverse_rotate_b(stack_b);
+			ft_reverse_rotate_b(checker);
 		}
 		if (ft_strcmp(line, RRR) == 0)
 		{
-			ft_reverse_rotate_r(stack_a, stack_b);
+			ft_reverse_rotate_r(checker);
 		}
 		if (ft_strcmp(line, "") == 0)
 			exit(0);

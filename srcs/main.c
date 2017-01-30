@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:59:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/29 19:20:54 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 15:27:39 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ static t_stack	*ft_create_elem_stack(size_t nbr)
 {
 	t_stack	*stack;
 
-	stack = (t_stack*)malloc(sizeof(*stack));
+	if (!(stack = (t_stack*)malloc(sizeof(*stack))))
+		return (NULL);
 	stack->nbr = nbr;
 	stack->next = NULL;
 	return (stack);
@@ -43,7 +44,6 @@ static t_stack	*ft_list_push_params_stack(int ac, char **av)
 	list = NULL;
 	i = 1;
 	if (ac)
-	{
 		while (i < ac)
 		{
 			if (ft_stack_format(av[i]) == -1 || ft_stack_max(ft_atoll(av[i])) == -1)
@@ -51,30 +51,22 @@ static t_stack	*ft_list_push_params_stack(int ac, char **av)
 			ft_list_push_back_stack(&list, ft_atoll(av[i]));
 			i++;
 		}
-	}
 	return (list);
 }
 
 int					main(int argc, char **argv)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_checker	*checker;
 
 	if (argc == 1)
 		return (-1);
-	if ((stack_a = ft_list_push_params_stack(argc, argv)) == NULL)
+	if (!(checker = ft_memalloc(sizeof(t_checker))))
+		return (-1);
+	if ((checker->stack_a = ft_list_push_params_stack(argc, argv)) == NULL)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);
 	}
-	while (stack_a != NULL)
-	{
-		ft_printf("Content = %d ", stack_a->nbr);
-		stack_a = stack_a->next;
-	}
-	ft_putchar('\n');
-	int size = ft_list_size_stack(stack_a);
-	ft_printf("Size = %d ", size);
-	ft_checker(stack_a, stack_b);
+	ft_checker(checker);
 	return (0);
 }
