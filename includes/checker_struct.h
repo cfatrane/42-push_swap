@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:43:01 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 15:22:28 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 17:45:09 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ typedef struct			s_stack
 	struct	s_stack		*prev;
 //	size_t				size = ft_list_size_stack(s_stack);
 }						t_stack;
+
+typedef struct			s_dblist
+{
+	t_stack				*first;
+	t_stack				*last;
+}						t_dblist;
 
 typedef struct		s_checker
 {
