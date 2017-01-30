@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:54:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 16:33:57 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 17:19:58 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,25 @@
 
 int	ft_rotate_a(t_checker *checker)
 {
+	t_stack	*last;
+	t_stack	*second;
+
+	last = checker->stack_a->prev;
+	second = checker->stack_a->next;
+	if (checker->size_a > 1)
+	{
+		last->next = checker->stack_a;
+		last->next->next = NULL;
+		checker->stack_a = second;
+	}
 	t_stack *tmpstack = checker->stack_a;
-	while (tmpstack != NULL)
+/*	while (tmpstack != NULL)
 	{
 		ft_printf("%d ", tmpstack->nbr);
 		tmpstack = tmpstack->next;
 	}
-	return (0);
+	ft_putchar('\n');
+*/	return (0);
 }
 
 int	ft_rotate_b(t_checker *checker)

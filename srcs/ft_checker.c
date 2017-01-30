@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:53:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 16:22:01 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 17:00:56 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_checker(t_checker *checker)
 	while (get_next_line(0, &line))
 	{
 		ft_size(checker);
+		ft_printf("\033[32mSize A = %d et Size B = %d\n\033[0m", checker->size_a, checker->size_b);
 		if (ft_strcmp(line, SA) == 0)
 		{
 			ft_swap_a(checker);
