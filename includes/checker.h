@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 13:33:16 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 16:07:47 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,9 @@ int			ft_reverse_rotate_b(t_checker *checker);
 int			ft_reverse_rotate_r(t_checker *checker);
 
 size_t		ft_list_size_stack(t_stack *stack);
+void		ft_list_delone_front_stack_a(t_checker *checker);
+void		ft_list_delone_front_stack_b(t_checker *checker);
+
 t_checker		*ft_list_at_checker(t_checker *stack, unsigned int nbr);
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait

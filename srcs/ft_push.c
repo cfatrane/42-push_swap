@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:54:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 15:32:42 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 16:18:45 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	ft_list_push_front_stack_a(t_checker *checker)
 {
-	t_stack	*tmp;
 	t_stack	*new;
+	t_stack	*tmp;
 
 	tmp = checker->stack_a;
-	new = NULL;
-	if (!(new = (t_stack *)malloc(sizeof(new))))
+	if (!(new = ft_memalloc(sizeof(t_stack))))
 		return ;
 	new->next = NULL;
 	new->prev = NULL;
@@ -36,16 +35,16 @@ void	ft_list_push_front_stack_a(t_checker *checker)
 	else
 		checker->stack_a = new;
 	checker->size_a++;
+	ft_list_delone_front_stack_b(checker);
 }
 
 void	ft_list_push_front_stack_b(t_checker *checker)
 {
-	t_stack	*tmp;
 	t_stack	*new;
+	t_stack	*tmp;
 
 	tmp = checker->stack_b;
-	new = NULL;
-	if (!(new = (t_stack *)malloc(sizeof(new))))
+	if (!(new = ft_memalloc(sizeof(t_stack))))
 		return ;
 	new->next = NULL;
 	new->prev = NULL;
@@ -62,24 +61,27 @@ void	ft_list_push_front_stack_b(t_checker *checker)
 	else
 		checker->stack_b = new;
 	checker->size_b++;
+	ft_list_delone_front_stack_a(checker);
 }
 
 int	ft_push_a(t_checker *checker)
 {
 	if (checker->size_b > 0)
-	{
 		ft_list_push_front_stack_a(checker);
+	t_stack *tmpstack = checker->stack_a;
+	while (tmpstack != NULL)
+	{
+		ft_printf("%d ", tmpstack->nbr);
+		tmpstack = tmpstack->next;
 	}
-	ft_putendl(PA);
+	ft_putchar('\n');
 	return (0);
 }
 
 int	ft_push_b(t_checker *checker)
 {
 	if (checker->size_a > 0)
-	{
 		ft_list_push_front_stack_b(checker);
-	}
 	t_stack *tmpstack = checker->stack_b;
 	while (tmpstack != NULL)
 	{
@@ -87,6 +89,5 @@ int	ft_push_b(t_checker *checker)
 		tmpstack = tmpstack->next;
 	}
 	ft_putchar('\n');
-	ft_putendl(PB);
 	return (0);
 }

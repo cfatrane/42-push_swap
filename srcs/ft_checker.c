@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:53:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 15:10:46 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 16:14:52 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ void	ft_size(t_checker *checker)
 
 int	ft_checker(t_checker *checker)
 {
-	ft_size(checker);
 	char	*line;
 	while (get_next_line(0, &line))
 	{
+		ft_size(checker);
 		if (ft_strcmp(line, SA) == 0)
 		{
 			ft_swap_a(checker);
