@@ -6,14 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:43:01 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 17:45:09 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 19:02:03 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_STRUCT_H
 # define CHECKER_STRUCT_H
 
-# include "../libft/libft.h"
 # include "checker.h"
 
 typedef struct			s_stack

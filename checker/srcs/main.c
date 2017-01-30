@@ -6,53 +6,11 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:59:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 18:06:14 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/30 18:47:12 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
-/*
-   t_stack	*dlist_prepend(t_stack *p_list, int data)
-   {
-   if (p_list != NULL)
-   {
-   struct node *p_new = malloc(sizeof *p_new);
-   if (p_new != NULL)
-   {
-   p_new->nbr = data;
-   p_new->p_prev = NULL;
-   if (p_list->p_tail == NULL)
-   {
-   p_new->p_next = NULL;
-   p_list->p_head = p_new;
-   p_list->p_tail = p_new;
-   }
-   else
-   {
-   p_list->p_head->p_prev = p_new;
-   p_new->p_next = p_list->p_head;
-   p_list->p_head = p_new;
-   }
-   p_list->length++;
-   }
-   }
-   return p_list;
-   }*/
-void	PushBack(t_dblist *list, int val)
-{
-	t_stack *nouv = malloc(sizeof(t_stack));
-
-	if (!nouv)
-		exit(EXIT_FAILURE);
-	nouv->nbr = val;
-	nouv->prev = list->last;
-	nouv->next = NULL;
-	if (list->last)
-		list->last->next = nouv;
-	else
-		list->first = nouv;
-	list->last = nouv;
-}
 
 static t_stack	*ft_create_elem_stack(size_t nbr)
 {
