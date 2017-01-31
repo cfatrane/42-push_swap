@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 14:53:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 18:47:42 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/01/31 18:55:17 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/01/31 18:55:17 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_size(t_checker *checker)
 	checker->size_b = ft_list_size_stack(checker->stack_b);
 }
 
-int	ft_checker(t_checker *checker)
+int		ft_checker(t_checker *checker)
 {
 	char	*line;
 

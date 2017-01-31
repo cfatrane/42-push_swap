@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:54:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/31 17:05:46 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/31 17:07:00 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_push_a(t_checker *checker)
 	if (checker->size_b > 0)
 	{
 		ft_list_push_front_stack(&checker->stack_a, checker->stack_b->nbr);
-		ft_list_delone_front_stack_b(checker);
+		ft_list_delone_front_stack(&checker->stack_b);
 	}
 	t_stack *tmpstack_a = checker->stack_a;
 	t_stack *tmpstack_b = checker->stack_b;
@@ -43,7 +43,7 @@ int	ft_push_b(t_checker *checker)
 	if (checker->size_a > 0)
 	{
 		ft_list_push_front_stack(&checker->stack_b, checker->stack_a->nbr);
-		ft_list_delone_front_stack_a(checker);
+		ft_list_delone_front_stack(&checker->stack_a);
 	}
 	t_stack *tmpstack_a = checker->stack_a;
 	t_stack *tmpstack_b = checker->stack_b;

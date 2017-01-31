@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/01/31 15:08:59 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/01/31 17:12:46 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC_NAME = 	main.c				\
 			ft_push.c			\
 			ft_rotate.c			\
 			ft_reverse_rotate.c	\
+			ft_list_push.c		\
 			ft_utils.c			\
 
 OBJ_NAME = $(SRC_NAME:.c=.o)
