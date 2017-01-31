@@ -6,15 +6,13 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/01/29 18:28:25 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/01/31 15:08:59 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 # Binary
 
-NAME_C = checker
-
-NAME_P = push_swap
+NAME = checker
 
 # Path
 
@@ -26,23 +24,32 @@ INC_PATH = -I./includes/
 
 # Name
 
-SRC_NAME_CHECKER = 	main.c				\
+SRC_NAME = 	main.c				\
+			ft_checker.c		\
+			ft_checker_error.c	\
+			ft_swap.c			\
+			ft_push.c			\
+			ft_rotate.c			\
+			ft_reverse_rotate.c	\
+			ft_utils.c			\
 
-SRC_NAME_PUSH_SWAP = 	main.c				\
-
-OBJ_NAME_CHECKER = $(SRC_NAME_CHECKER:.c=.o)
+OBJ_NAME = $(SRC_NAME:.c=.o)
 
 # Files
 
-SRC_CHECKER = $(addprefix $(SRC_PATH)/,$(SRC_NAME_CHECKER))
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
 
-OBJ_CHECKER = $(addprefix $(OBJ_PATH), $(OBJ_NAME_CHECKER))
+OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
 # Flags
 
 LDFLAGS = -L./libft/
 
+PRINTFFLAG = -L./ft_printf/
+
 LFT = -lft
+
+PRINTF = -lftprintf
 
 CC = gcc $(CFLAGS)
 
@@ -50,14 +57,14 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Rules
 
-all: $(NAME_C)
+all: $(NAME)
 
-$(NAME_C): $(OBJ_CHECKER)
+$(NAME): $(OBJ)
 	@make -C./libft/
 	@make -C./ft_printf/
-	@echo "\033[34mCreation of $(NAME_C) ...\033[0m"
-	@$(CC) $(LDFLAGS) $(LFT) $(OBJ_CHECKER) -o $@
-	@echo "\033[32m$(NAME_C) created\n\033[0m"
+	@echo "\033[34mCreation of $(NAME) ...\033[0m"
+	@$(CC) $(LDFLAGS) $(PRINTFFLAG) $(LFT) $(PRINTF) $(OBJ) -o $@
+	@echo "\033[32m$(NAME) created\n\033[0m"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
@@ -66,19 +73,21 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 clean:
 	@make clean -C ./libft/
 	@make clean -C ./ft_printf/
-	@echo "\033[33mRemoval of .o files of $(NAME_C) ...\033[0m"
-	@rm -f $(OBJ_CHECKER)
+	@echo "\033[33mRemoval of .o files of $(NAME) ...\033[0m"
+	@rm -f $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[31mFiles .o deleted\n\033[0m"
 
 fclean: clean
 	@make fclean -C ./libft/
 	@make fclean -C ./ft_printf/
-	@echo "\033[33mRemoval of $(NAME_C)...\033[0m"
-	@rm -f $(NAME_C)
-	@echo "\033[31mBinary $(NAME_C) deleted\n\033[0m"
+	@echo "\033[33mRemoval of $(NAME)...\033[0m"
+	@rm -f $(NAME)
+	@echo "\033[31mBinary $(NAME) deleted\n\033[0m"
 
 re: fclean all
+	@make re -C ./libft/
+	@make re -C ./ft_printf/
 
 norme:
 	norminette $(SRC)

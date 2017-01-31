@@ -6,15 +6,15 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 19:01:24 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/31 16:53:07 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include "../../libft/libft.h"
-# include "../../ft_printf/includes/ft_printf.h"
+# include "../libft/libft.h"
+# include "../ft_printf/includes/ft_printf.h"
 # include "checker_struct.h"
 
 # define SA "sa"
@@ -50,8 +50,15 @@ int			ft_reverse_rotate_b(t_checker *checker);
 int			ft_reverse_rotate_r(t_checker *checker);
 
 size_t		ft_list_size_stack(t_stack *stack);
+
 void		ft_list_delone_front_stack_a(t_checker *checker);
 void		ft_list_delone_front_stack_b(t_checker *checker);
+
+t_stack		*ft_create_elem_stack(size_t nbr);
+
+void		ft_list_delone_front_stack(t_stack **stack);
+void		ft_list_push_back_stack(t_stack **stack, size_t nbr);
+void		ft_list_push_front_stack(t_stack **stack, size_t nbr);
 
 t_checker		*ft_list_at_checker(t_checker *stack, unsigned int nbr);
 /*
