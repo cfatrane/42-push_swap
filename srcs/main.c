@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/31 18:55:39 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 14:59:22 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,25 +23,27 @@ t_stack	*ft_create_elem_stack(size_t nbr)
 	return (stack);
 }
 
-static t_stack	*ft_list_push_params_stack(int ac, char **av)
+t_stack	*ft_list_push_params_stack(int ac, char **av)
 {
 	int			i;
-	t_stack		*list;
+	t_stack		*stack;
 
-	list = NULL;
+	stack = NULL;
 	i = 1;
 	if (ac)
 		while (i < ac)
 		{
 			if (ft_stack_format(av[i]) == -1 || ft_stack_max(ft_atoll(av[i])) == -1)
 				return (NULL);
-			ft_list_push_back_stack(&list, ft_atoll(av[i]));
+			ft_list_push_back_stack(&stack, ft_atoll(av[i]));
 			i++;
 		}
-	return (list);
+	if (ft_stack_doublon(stack) == -1)
+		return (NULL);
+	return (stack);
 }
 
-int					main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
 	t_checker	*checker;
 

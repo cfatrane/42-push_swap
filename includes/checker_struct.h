@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:43:01 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/30 19:02:03 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/01/31 19:04:44 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,13 @@
 
 # include "checker.h"
 
-typedef struct			s_stack
+typedef struct		s_stack
 {
-	size_t				nbr;
-	struct	s_stack		*next;
-	struct	s_stack		*prev;
+	size_t			nbr;
+	struct s_stack	*next;
+//	struct s_stack		*prev;
 //	size_t				size = ft_list_size_stack(s_stack);
-}						t_stack;
-
-typedef struct			s_dblist
-{
-	t_stack				*first;
-	t_stack				*last;
-}						t_dblist;
+}					t_stack;
 
 typedef struct		s_checker
 {
