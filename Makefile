@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/01 18:32:31 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/01 19:58:34 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,15 @@ SRC_NAME_C = 	main.c				\
 OBJ_NAME_C = $(SRC_NAME_C:.c=.o)
 
 SRC_NAME_P = 	main.c				\
+				ft_push_swap.c		\
+				ft_push_swap_error.c\
+				ft_swap.c			\
+				ft_push.c			\
+				ft_rotate.c			\
+				ft_reverse_rotate.c	\
+				ft_stack_push.c		\
+				ft_stack_del.c		\
+				ft_utils.c			\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

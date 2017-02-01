@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:10:54 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 19:29:03 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-t_stack	*ft_create_elem_stack(size_t nbr)
+t_stack	*ft_create_elem_stack(ssize_t nbr)
 {
 	t_stack	*stack;
 

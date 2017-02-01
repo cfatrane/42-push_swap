@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 18:15:51 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 19:58:06 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
-/*
-t_stack	*ft_create_elem_stack(size_t nbr)
+#include "../includes/push_swap.h"
+
+t_stack	*ft_create_elem_stack(ssize_t nbr)
 {
 	t_stack	*stack;
 
@@ -23,14 +23,20 @@ t_stack	*ft_create_elem_stack(size_t nbr)
 	return (stack);
 }
 
-t_stack	*ft_stack_push_params(int ac, char **av)
+t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *push_swap)
 {
-	int			i;
+	ssize_t		i;
 	t_stack		*stack;
 
 	stack = NULL;
 	i = 1;
 	if (ac)
+	{
+		if (ft_strcmp(av[i], "-v") == 0)
+		{
+			push_swap->display = 1;
+			i++;
+		}
 		while (i < ac)
 		{
 			if (ft_stack_format(av[i]) == -1 ||
@@ -39,27 +45,25 @@ t_stack	*ft_stack_push_params(int ac, char **av)
 			ft_stack_push_back(&stack, ft_atoll(av[i]));
 			i++;
 		}
+	}
 	if (ft_stack_doublon(stack) == -1)
 		return (NULL);
 	return (stack);
 }
-*/
+
 int		main(int argc, char **argv)
 {
-	(void)argc;
-	(void)argv;
-	ft_putendl_fd("push_swap_folder", 1);
-/*	t_checker	*checker;
+	t_push_swap	*push_swap;
 
 	if (argc == 1)
 		return (-1);
-	if (!(checker = ft_memalloc(sizeof(t_checker))))
+	if (!(push_swap = ft_memalloc(sizeof(t_push_swap))))
 		return (-1);
-	if ((checker->stack_a = ft_stack_push_params(argc, argv)) == NULL)
+	if ((push_swap->stack_a = ft_stack_push_params(argc, argv, push_swap)) == NULL)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);
 	}
-	ft_checker(checker);
-*/	return (0);
+	ft_push_swap(push_swap);
+	return (0);
 }

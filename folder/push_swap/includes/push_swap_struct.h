@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_struct.h                                   :+:      :+:    :+:   */
+/*   push_swap_struct.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 14:43:01 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 17:03:00 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/01 19:24:51 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/01 19:57:39 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_STRUCT_H
-# define CHECKER_STRUCT_H
+#ifndef PUSH_SWAP_STRUCT_H
+# define PUSH_SWAP_STRUCT_H
 
-# include "checker.h"
+# include "push_swap.h"
 
 typedef struct		s_stack
 {
-	size_t			nbr;
+	ssize_t			nbr;
 	struct s_stack	*next;
 }					t_stack;
 
-typedef struct		s_checker
+typedef struct		s_push_swap
 {
 	t_stack			*stack_a;
 	t_stack			*stack_b;
 	size_t			size_a;
 	size_t			size_b;
-}					t_checker;
+	int				display;
+}					t_push_swap;
 
 #endif
