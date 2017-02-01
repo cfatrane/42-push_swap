@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:54:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 15:15:01 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 17:00:59 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_rotate_a(t_checker *checker)
 
 void	ft_rotate_b(t_checker *checker)
 {
-	if (checker->size_a > 1)
+	if (checker->size_b > 1)
 	{
 		ft_stack_push_back(&checker->stack_b, checker->stack_b->nbr);
 		ft_stack_delone_front(&checker->stack_b);

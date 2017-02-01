@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 15:34:41 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 17:05:56 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define RRA "rra"
 # define RRB "rrb"
 # define RRR "rrr"
+
+# define ERROR != SA SB SS PA PB PA PB RA RB RR RRA RRB RRR
 
 int			ft_checker(t_checker *checker);
 

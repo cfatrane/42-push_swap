@@ -12,3 +12,9 @@ pb
 KO
 $>./checker 3 2 one 0
 Error
+
+ft_printf("\033[32mSize A = %d\tSize B = %d\033[0m", checker->size_a, checker->size_b);
+ft_putchar('\n');
+ft_stack_display(checker->stack_a);
+ft_stack_display(checker->stack_b);
+

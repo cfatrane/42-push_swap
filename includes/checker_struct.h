@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 14:43:01 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 15:03:40 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 17:03:00 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,5 @@ typedef struct		s_checker
 	size_t			size_a;
 	size_t			size_b;
 }					t_checker;
-
-typedef struct	s_index
-{
-	int			i;
-	int			j;
-}				t_index;
 
 #endif
