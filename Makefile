@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/01 18:18:36 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/01 18:26:48 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,17 +18,17 @@ NAME_P = push_swap
 
 # Path
 
-SRC_PATH_C = ./checker_folder/srcs/
+SRC_PATH_C = ./folder/checker_folder/srcs/
 
-OBJ_PATH_C = ./checker_folder/objs/
+OBJ_PATH_C = ./folder/checker_folder/objs/
 
-INC_PATH_C = -I./checker_folder/includes/
+INC_PATH_C = -I./folder/checker_folder/includes/
 
-SRC_PATH_P = ./push_swap_folder/srcs/
+SRC_PATH_P = ./folder/push_swap_folder/srcs/
 
-OBJ_PATH_P = ./push_swap_folder/objs/
+OBJ_PATH_P = ./folder/push_swap_folder/objs/
 
-INC_PATH_P = -I./push_swap_folder/includes/
+INC_PATH_P = -I./folder/push_swap_folder/includes/
 
 # Name
 # Name
@@ -100,8 +100,7 @@ $(OBJ_PATH_P)%.o: $(SRC_PATH_P)%.c
 
 clean:
 	@make clean -C ./ft_printf/
-	@echo "\033[33mRemoval of .o files of $(NAME_C) ...\033[0m"
-	@echo "\033[33mRemoval of .o files of $(NAME_P) ...\033[0m"
+	@echo "\033[33mRemoval of .o files of $(NAME_C) and $(NAME_P) ...\033[0m"
 	@rm -f $(OBJ_C)
 	@rm -f $(OBJ_P)
 	@rmdir $(OBJ_PATH_C) 2> /dev/null || true
@@ -110,8 +109,7 @@ clean:
 
 fclean: clean
 	@make fclean -C ./ft_printf/
-	@echo "\033[33mRemoval of $(NAME_C)...\033[0m"
-	@echo "\033[33mRemoval of $(NAME_P)...\033[0m"
+	@echo "\033[33mRemoval of $(NAME_C) and $(NAME_P) ...\033[0m"
 	@rm -f $(NAME_C)
 	@rm -f $(NAME_P)
 	@echo "\033[31mBinary $(NAME_C) and $(NAME_P) deleted\033[0m"
