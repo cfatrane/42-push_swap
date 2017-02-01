@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/01 18:26:48 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/01 18:28:06 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,17 +18,17 @@ NAME_P = push_swap
 
 # Path
 
-SRC_PATH_C = ./folder/checker_folder/srcs/
+SRC_PATH_C = ./folder/checker/srcs/
 
-OBJ_PATH_C = ./folder/checker_folder/objs/
+OBJ_PATH_C = ./folder/checker/objs/
 
-INC_PATH_C = -I./folder/checker_folder/includes/
+INC_PATH_C = -I./folder/checker/includes/
 
-SRC_PATH_P = ./folder/push_swap_folder/srcs/
+SRC_PATH_P = ./folder/push_swap/srcs/
 
-OBJ_PATH_P = ./folder/push_swap_folder/objs/
+OBJ_PATH_P = ./folder/push_swap/objs/
 
-INC_PATH_P = -I./folder/push_swap_folder/includes/
+INC_PATH_P = -I./folder/push_swap/includes/
 
 # Name
 # Name
