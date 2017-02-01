@@ -6,15 +6,15 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 17:05:56 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 17:51:28 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-# include "../libft/libft.h"
-# include "../ft_printf/includes/ft_printf.h"
+# include "../../libft/libft.h"
+# include "../../ft_printf/includes/ft_printf.h"
 # include "checker_struct.h"
 
 # define SA "sa"
