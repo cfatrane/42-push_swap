@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 16:54:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 15:00:50 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 18:53:31 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	ft_stack_format(char *av)
 {
 	while (*av)
 	{
+		if (*av == '-')
+			av++;
 		if (!ft_isdigit(*av))
 			return (-1);
 		av++;
@@ -25,7 +27,7 @@ int	ft_stack_format(char *av)
 
 int	ft_stack_doublon(t_stack *stack)
 {
-	size_t	nbr_tmp;
+	ssize_t	nbr_tmp;
 	t_stack	*tmpstack_1;
 	t_stack	*tmpstack_2;
 
@@ -45,9 +47,9 @@ int	ft_stack_doublon(t_stack *stack)
 	return (0);
 }
 
-int	ft_stack_max(size_t av)
+int	ft_stack_max(ssize_t av)
 {
-	if (av > INT_MAX)
+	if (av > INT_MAX || av < INT_MIN)
 		return (-1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:17 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 17:23:11 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 19:07:23 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int		ft_operation(t_checker *checker, char *line)
 		ft_reverse_rotate_b(checker);
 	else if (ft_strcmp(line, RRR) == 0)
 		ft_reverse_rotate_r(checker);
+	else if (ft_strcmp(line, RRR) == 0)
+		ft_reverse_rotate_r(checker);
 	else
 		return (-1);
 	return (0);
@@ -60,6 +62,8 @@ int		ft_checker(t_checker *checker)
 			ft_putendl_fd("Error", 2);
 			exit(0);
 		}
+		if (checker->display == 1)
+			ft_stack_display(checker->stack_a, checker->stack_b);
 		free(line);
 	}
 	if (ft_stack_check(checker) == 0)

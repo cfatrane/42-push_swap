@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/01 18:28:06 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/01 18:32:31 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,6 @@ OBJ_PATH_P = ./folder/push_swap/objs/
 
 INC_PATH_P = -I./folder/push_swap/includes/
 
-# Name
 # Name
 
 SRC_NAME_C = 	main.c				\
@@ -116,6 +115,11 @@ fclean: clean
 
 re: fclean all
 	@make re -C ./ft_printf/
+
+git:
+	@git add .
+	@git commit -m "$(NAME_P)"
+	@git push
 
 norme:
 	norminette $(SRC)

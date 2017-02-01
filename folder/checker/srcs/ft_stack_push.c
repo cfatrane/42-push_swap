@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 15:17:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 15:18:50 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 18:51:31 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_stack_push_front(t_stack **stack, size_t nbr)
+void	ft_stack_push_front(t_stack **stack, ssize_t nbr)
 {
 	t_stack	*list;
 
@@ -22,7 +22,7 @@ void	ft_stack_push_front(t_stack **stack, size_t nbr)
 	*stack = list;
 }
 
-void	ft_stack_push_back(t_stack **stack, size_t nbr)
+void	ft_stack_push_back(t_stack **stack, ssize_t nbr)
 {
 	if (*stack)
 	{

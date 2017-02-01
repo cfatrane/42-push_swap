@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 10:45:03 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/01/28 19:37:17 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 18:54:53 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,7 @@ t_list				*ft_list_find(t_list *begin_list, void *data_ref,
 void				ft_list_remove_if(t_list **begin_list, void *content_ref,
 		int (*cmp)());
 void				ft_list_merge(t_list **begin_list1, t_list *begin_list2);
-t_list				*ft_list_sort(t_list* lst, int (*cmp)());
+t_list				*ft_list_sort(t_list *lst, int (*cmp)());
 
 int					get_next_line(const int fd, char **line);
 

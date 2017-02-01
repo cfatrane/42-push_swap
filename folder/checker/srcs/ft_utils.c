@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 18:44:49 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 15:34:59 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 19:15:32 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,32 @@ size_t	ft_stack_size(t_stack *stack)
 	return (ft_stack_size(stack->next) + 1);
 }
 
-void	ft_stack_display(t_stack *stack)
+void	ft_stack_display(t_stack *stack_a, t_stack *stack_b)
 {
-	t_stack	*tmpstack;
+	t_stack	*tmpstack_a;
+	t_stack	*tmpstack_b;
 
-	tmpstack = stack;
-	while (tmpstack)
+	tmpstack_a = stack_a;
+	tmpstack_b = stack_b;
+	ft_printf("\033[31mStack A = \033[0m");
+	while (tmpstack_a)
 	{
-		ft_printf("\033[31m%d \033[0m", tmpstack->nbr);
-		tmpstack = tmpstack->next;
+		ft_printf("\033[31m%d \033[0m", tmpstack_a->nbr);
+		tmpstack_a = tmpstack_a->next;
+	}
+	ft_putchar('\n');
+	ft_printf("\033[36mStack B = \033[0m");
+	while (tmpstack_b)
+	{
+		ft_printf("\033[36m%d \033[0m", tmpstack_b->nbr);
+		tmpstack_b = tmpstack_b->next;
 	}
 	ft_putchar('\n');
 }
 
 int		ft_stack_check(t_checker *checker)
 {
-	size_t	nbr_tmp;
+	ssize_t	nbr_tmp;
 	t_stack	*tmpstack;
 
 	tmpstack = checker->stack_a;

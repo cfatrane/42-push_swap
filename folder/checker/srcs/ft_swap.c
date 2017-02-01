@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:53:55 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 15:14:12 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 18:50:50 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_swap_a(t_checker *checker)
 {
-	int		tmp;
+	ssize_t	tmp;
 
 	if (checker->size_a > 1)
 	{
@@ -26,7 +26,7 @@ void	ft_swap_a(t_checker *checker)
 
 void	ft_swap_b(t_checker *checker)
 {
-	int		tmp;
+	ssize_t	tmp;
 
 	if (checker->size_b > 1)
 	{
