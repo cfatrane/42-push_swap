@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_list_push.c                                     :+:      :+:    :+:   */
+/*   ft_stack_del.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/31 17:12:11 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 14:24:33 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/01 15:18:04 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/01 15:18:06 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-void	ft_list_push_front_stack(t_stack **stack, size_t nbr)
+void	ft_stack_delone_front(t_stack **stack)
 {
-	t_stack	*list;
+	t_stack	*to_free;
 
-	list = ft_create_elem_stack(nbr);
-	if ((*stack))
-		list->next = *stack;
-	*stack = list;
+	if (stack == NULL)
+		exit(EXIT_FAILURE);
+	if ((*stack) != NULL)
+	{
+		to_free = *stack;
+		*(stack) = (*stack)->next;
+		free(to_free);
+	}
 }
 
-void	ft_list_push_back_stack(t_stack **stack, size_t nbr)
+void	ft_stack_delone_back(t_stack **stack)
 {
-	if (*stack)
+	t_stack	*tmp;
+	t_stack	*to_free;
+
+	to_free = *stack;
+	tmp = NULL;
+	while (to_free->next)
 	{
-		if ((*stack)->next)
-			ft_list_push_back_stack(&(*stack)->next, nbr);
-		else
-			(*stack)->next = ft_create_elem_stack(nbr);
+		tmp = to_free;
+		to_free = to_free->next;
 	}
-	else
-		*stack = ft_create_elem_stack(nbr);
+	if (tmp != NULL)
+		tmp->next = NULL;
+	free(to_free);
 }

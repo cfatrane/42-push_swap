@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 15:21:31 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 14:35:27 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 15:15:20 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ void	ft_reverse_rotate_a(t_checker *checker)
 		tmpstack = checker->stack_a;
 		while (tmpstack->next != NULL)
 			tmpstack = tmpstack->next;
-		ft_list_push_front_stack(&checker->stack_a, tmpstack->nbr);
-		ft_list_delone_back_stack(&checker->stack_a);
+		ft_stack_push_front(&checker->stack_a, tmpstack->nbr);
+		ft_stack_delone_back(&checker->stack_a);
 	}
 }
 
@@ -33,8 +33,8 @@ void	ft_reverse_rotate_b(t_checker *checker)
 	tmpstack = checker->stack_b;
 	while (tmpstack->next != NULL)
 		tmpstack = tmpstack->next;
-	ft_list_push_front_stack(&checker->stack_b, tmpstack->nbr);
-	ft_list_delone_back_stack(&checker->stack_b);
+	ft_stack_push_front(&checker->stack_b, tmpstack->nbr);
+	ft_stack_delone_back(&checker->stack_b);
 }
 
 void	ft_reverse_rotate_r(t_checker *checker)

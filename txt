@@ -1,0 +1,14 @@
+$>./checker 3 2 1 0
+rra
+pb
+sa
+rra
+pa
+OK
+$>./checker 3 2 1 0
+sa
+rra
+pb
+KO
+$>./checker 3 2 one 0
+Error

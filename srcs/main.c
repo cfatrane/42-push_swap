@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 14:59:22 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 15:14:03 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	*ft_create_elem_stack(size_t nbr)
 	return (stack);
 }
 
-t_stack	*ft_list_push_params_stack(int ac, char **av)
+t_stack	*ft_stack_push_params(int ac, char **av)
 {
 	int			i;
 	t_stack		*stack;
@@ -35,7 +35,7 @@ t_stack	*ft_list_push_params_stack(int ac, char **av)
 		{
 			if (ft_stack_format(av[i]) == -1 || ft_stack_max(ft_atoll(av[i])) == -1)
 				return (NULL);
-			ft_list_push_back_stack(&stack, ft_atoll(av[i]));
+			ft_stack_push_back(&stack, ft_atoll(av[i]));
 			i++;
 		}
 	if (ft_stack_doublon(stack) == -1)
@@ -51,7 +51,7 @@ int		main(int argc, char **argv)
 		return (-1);
 	if (!(checker = ft_memalloc(sizeof(t_checker))))
 		return (-1);
-	if ((checker->stack_a = ft_list_push_params_stack(argc, argv)) == NULL)
+	if ((checker->stack_a = ft_stack_push_params(argc, argv)) == NULL)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);

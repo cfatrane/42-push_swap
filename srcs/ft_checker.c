@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:17 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 14:36:22 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 15:30:42 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_size(t_checker *checker)
 {
-	checker->size_a = ft_list_size_stack(checker->stack_a);
-	checker->size_b = ft_list_size_stack(checker->stack_b);
+	checker->size_a = ft_stack_size(checker->stack_a);
+	checker->size_b = ft_stack_size(checker->stack_b);
 }
 
 int		ft_checker(t_checker *checker)
@@ -47,12 +47,21 @@ int		ft_checker(t_checker *checker)
 			ft_reverse_rotate_b(checker);
 		if (ft_strcmp(line, RRR) == 0)
 			ft_reverse_rotate_r(checker);
-		ft_printf("\033[32mSize A = %d\tSize B = %d\033[0m", checker->size_a, checker->size_b);
+/*		else
+		{
+			ft_putendl_fd("Error", 2);
+			return (-1);
+		}
+	*/	ft_printf("\033[32mSize A = %d\tSize B = %d\033[0m", checker->size_a, checker->size_b);
 		ft_putchar('\n');
-		ft_list_display(checker->stack_a);
-		ft_list_display(checker->stack_b);
-		if (ft_strcmp(line, "") == 0)
-			exit(0);
+		ft_stack_display(checker->stack_a);
+		ft_stack_display(checker->stack_b);
+		//		if (ft_strcmp(line, "") == 0)
+		//			exit(0);
 	}
+	if (ft_stack_check(checker) == 0)
+		ft_putstr("OK");
+	else
+		ft_putstr("KO");
 	return (0);
 }

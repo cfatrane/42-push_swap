@@ -6,13 +6,15 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/01 14:23:10 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/01 15:21:59 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 # Binary
 
-NAME = checker
+NAME_C = checker
+
+NAME_P = push_swap
 
 # Path
 
@@ -24,24 +26,24 @@ INC_PATH = -I./includes/
 
 # Name
 
-SRC_NAME = 	main.c				\
-			ft_checker.c		\
-			ft_checker_error.c	\
-			ft_swap.c			\
-			ft_push.c			\
-			ft_rotate.c			\
-			ft_reverse_rotate.c	\
-			ft_list_push.c		\
-			ft_list_del.c		\
-			ft_utils.c			\
+SRC_NAME_C = 	main.c				\
+				ft_checker.c		\
+				ft_checker_error.c	\
+				ft_swap.c			\
+				ft_push.c			\
+				ft_rotate.c			\
+				ft_reverse_rotate.c	\
+				ft_stack_push.c		\
+				ft_stack_del.c		\
+				ft_utils.c			\
 
-OBJ_NAME = $(SRC_NAME:.c=.o)
+OBJ_NAME_C = $(SRC_NAME_C:.c=.o)
 
 # Files
 
-SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME))
+SRC = $(addprefix $(SRC_PATH)/,$(SRC_NAME_C))
 
-OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
+OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME_C))
 
 # Flags
 
@@ -59,14 +61,14 @@ CFLAGS = -Wall -Wextra -Werror
 
 # Rules
 
-all: $(NAME)
+all: $(NAME_C)
 
-$(NAME): $(OBJ)
+$(NAME_C): $(OBJ)
 	@make -C./libft/
 	@make -C./ft_printf/
-	@echo "\033[34mCreation of $(NAME) ...\033[0m"
+	@echo "\033[34mCreation of $(NAME_C) ...\033[0m"
 	@$(CC) $(LDFLAGS) $(PRINTFFLAG) $(LFT) $(PRINTF) $(OBJ) -o $@
-	@echo "\033[32m$(NAME) created\n\033[0m"
+	@echo "\033[32m$(NAME_C) created\n\033[0m"
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
@@ -75,7 +77,7 @@ $(OBJ_PATH)%.o: $(SRC_PATH)%.c
 clean:
 	@make clean -C ./libft/
 	@make clean -C ./ft_printf/
-	@echo "\033[33mRemoval of .o files of $(NAME) ...\033[0m"
+	@echo "\033[33mRemoval of .o files of $(NAME_C) ...\033[0m"
 	@rm -f $(OBJ)
 	@rmdir $(OBJ_PATH) 2> /dev/null || true
 	@echo "\033[31mFiles .o deleted\n\033[0m"
@@ -83,9 +85,9 @@ clean:
 fclean: clean
 	@make fclean -C ./libft/
 	@make fclean -C ./ft_printf/
-	@echo "\033[33mRemoval of $(NAME)...\033[0m"
-	@rm -f $(NAME)
-	@echo "\033[31mBinary $(NAME) deleted\n\033[0m"
+	@echo "\033[33mRemoval of $(NAME_C)...\033[0m"
+	@rm -f $(NAME_C)
+	@echo "\033[31mBinary $(NAME_C) deleted\n\033[0m"
 
 re: fclean all
 	@make re -C ./libft/

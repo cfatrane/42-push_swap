@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 17:00:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 14:59:19 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 15:34:41 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,24 +45,24 @@ void		ft_push_b(t_checker *checker);
 void		ft_rotate_a(t_checker *checker);
 void		ft_rotate_b(t_checker *checker);
 void		ft_rotate_r(t_checker *checker);
-void		ft_reverse_rotate_a(t_checker *checker);
 
+void		ft_reverse_rotate_a(t_checker *checker);
 void		ft_reverse_rotate_b(t_checker *checker);
 void		ft_reverse_rotate_r(t_checker *checker);
 
+int			ft_stack_check(t_checker *checker);
+
 t_stack		*ft_create_elem_stack(size_t nbr);
 
-void		ft_list_push_back_stack(t_stack **stack, size_t nbr);
-void		ft_list_push_front_stack(t_stack **stack, size_t nbr);
+void		ft_stack_push_back(t_stack **stack, size_t nbr);
+void		ft_stack_push_front(t_stack **stack, size_t nbr);
 
-void		ft_list_delone_front_stack(t_stack **stack);
-void		ft_list_delone_back_stack(t_stack **stack);
+void		ft_stack_delone_front(t_stack **stack);
+void		ft_stack_delone_back(t_stack **stack);
 
-size_t		ft_list_size_stack(t_stack *stack);
-void		ft_list_display(t_stack *stack);
+size_t		ft_stack_size(t_stack *stack);
+void		ft_stack_display(t_stack *stack);
 
-
-t_checker		*ft_list_at_checker(t_checker *stack, unsigned int nbr);
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait
 rien s’il n’y en a qu’un ou aucun.

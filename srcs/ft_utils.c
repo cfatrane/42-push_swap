@@ -6,20 +6,20 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 18:44:49 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 14:37:15 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/01 15:34:59 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/checker.h"
 
-size_t	ft_list_size_stack(t_stack *stack)
+size_t	ft_stack_size(t_stack *stack)
 {
 	if (stack == NULL)
 		return (0);
-	return (ft_list_size_stack(stack->next) + 1);
+	return (ft_stack_size(stack->next) + 1);
 }
 
-void	ft_list_display(t_stack *stack)
+void	ft_stack_display(t_stack *stack)
 {
 	t_stack	*tmpstack;
 
@@ -31,15 +31,22 @@ void	ft_list_display(t_stack *stack)
 	}
 	ft_putchar('\n');
 }
-/*
-   t_stack	*ft_list_at_stack(t_stack *stack, unsigned int nbr)
-   {
-   if (stack == NULL)
-   return (NULL);
-   if (nbr == 1 && stack->next == NULL)
-   return (NULL);
-   if (nbr == 0)
-   return (stack);
-   else
-   return (ft_list_at_stack(stack->next, nbr - 1));
-   }*/
+
+int		ft_stack_check(t_checker *checker)
+{
+	size_t	nbr_tmp;
+	t_stack	*tmpstack;
+
+	tmpstack = checker->stack_a;
+	nbr_tmp = tmpstack->nbr;
+	while (tmpstack->next)
+	{
+		if (nbr_tmp > tmpstack->next->nbr)
+			return (-1);
+		tmpstack = tmpstack->next;
+		nbr_tmp = tmpstack->nbr;
+	}
+	if (checker->stack_b != NULL)
+		return (-1);
+	return (0);
+}
