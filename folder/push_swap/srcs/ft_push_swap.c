@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 20:00:59 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/02 16:02:25 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,14 @@ int		ft_operation(t_push_swap *push_swap, char *line)
 
 int		ft_push_swap(t_push_swap *push_swap)
 {
-	char	*line;
+		ft_size(push_swap);
+	while (ft_stack_check(push_swap) != 0)
+	{
+		if (push_swap->stack_a->nbr > push_swap->stack_a->next->nbr)
+			ft_swap_a(push_swap);
+		ft_putendl("ICI");
+	}
+/*	char	*line;
 
 	while (get_next_line(0, &line))
 	{
@@ -70,5 +77,5 @@ int		ft_push_swap(t_push_swap *push_swap)
 		ft_putendl("OK");
 	else
 		ft_putendl("KO");
-	return (0);
+*/	return (0);
 }

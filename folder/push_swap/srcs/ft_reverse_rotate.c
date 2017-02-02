@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 15:21:31 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:59:29 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/02 08:47:36 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void	ft_reverse_rotate_a(t_push_swap *push_swap)
 			tmpstack = tmpstack->next;
 		ft_stack_push_front(&push_swap->stack_a, tmpstack->nbr);
 		ft_stack_delone_back(&push_swap->stack_a);
+		ft_putendl(RRA);
 	}
 }
 
@@ -37,6 +38,7 @@ void	ft_reverse_rotate_b(t_push_swap *push_swap)
 			tmpstack = tmpstack->next;
 		ft_stack_push_front(&push_swap->stack_b, tmpstack->nbr);
 		ft_stack_delone_back(&push_swap->stack_b);
+		ft_putendl(RRB);
 	}
 }
 

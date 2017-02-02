@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:53:55 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:59:31 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/02 08:46:41 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_swap_a(t_push_swap *push_swap)
 		tmp = push_swap->stack_a->nbr;
 		push_swap->stack_a->nbr = push_swap->stack_a->next->nbr;
 		push_swap->stack_a->next->nbr = tmp;
+		ft_putendl(SA);
 	}
 }
 
@@ -33,6 +34,7 @@ void	ft_swap_b(t_push_swap *push_swap)
 		tmp = push_swap->stack_b->nbr;
 		push_swap->stack_b->nbr = push_swap->stack_b->next->nbr;
 		push_swap->stack_b->next->nbr = tmp;
+		ft_putendl(SB);
 	}
 }
 
