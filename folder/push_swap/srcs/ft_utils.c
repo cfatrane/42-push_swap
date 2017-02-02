@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 18:44:49 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:59:44 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:15:34 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,16 @@ int		ft_stack_check(t_push_swap *push_swap)
 	if (push_swap->stack_b != NULL)
 		return (-1);
 	return (0);
+}
+
+t_stack	*ft_stack_at(t_stack *begin_list, size_t nbr)
+{
+	if (begin_list == NULL)
+		return (NULL);
+	if (nbr == 1 && begin_list->next == NULL)
+		return (NULL);
+	if (nbr == 0)
+		return (begin_list);
+	else
+		return (ft_stack_at(begin_list->next, nbr - 1));
 }

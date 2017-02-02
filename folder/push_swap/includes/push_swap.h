@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:57:43 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/02 19:15:32 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void		ft_stack_delone_back(t_stack **stack);
 
 size_t		ft_stack_size(t_stack *stack);
 void		ft_stack_display(t_stack *stack_a, t_stack *stack_b);
+t_stack		*ft_stack_at(t_stack *begin_list, size_t nbr);
 
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait

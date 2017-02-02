@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/02 16:02:25 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/02 18:39:20 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_size(t_push_swap *push_swap)
 {
 	push_swap->size_a = ft_stack_size(push_swap->stack_a);
 	push_swap->size_b = ft_stack_size(push_swap->stack_b);
+	push_swap->pivot = push_swap->size_a / 2;
 }
 
 int		ft_operation(t_push_swap *push_swap, char *line)
@@ -51,9 +52,9 @@ int		ft_operation(t_push_swap *push_swap, char *line)
 
 int		ft_push_swap(t_push_swap *push_swap)
 {
-		ft_size(push_swap);
 	while (ft_stack_check(push_swap) != 0)
 	{
+		ft_size(push_swap);
 		if (push_swap->stack_a->nbr > push_swap->stack_a->next->nbr)
 			ft_swap_a(push_swap);
 		ft_putendl("ICI");
