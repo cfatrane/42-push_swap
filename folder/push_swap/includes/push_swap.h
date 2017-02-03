@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 15:06:32 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/03 20:16:04 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,9 @@ t_stack		*ft_stack_at(t_stack *begin_list, size_t nbr);
 
 void	ft_stack_val_bord(t_push_swap *push_swap);
 
-int	ft_naif(t_push_swap *push_swap);
+int		ft_naif(t_push_swap *push_swap);
+void	ft_mergesort(t_push_swap *push_swap);
+//void	ft_mergesort(t_push_swap *push_swap, ssize_t size);
 void	ft_quicksort(t_push_swap *push_swap);
 void	ft_insertionsort(t_push_swap *push_swap);
 /*
