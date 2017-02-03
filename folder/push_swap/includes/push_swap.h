@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 20:16:04 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/03 21:37:57 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,7 @@ void	ft_mergesort(t_push_swap *push_swap);
 //void	ft_mergesort(t_push_swap *push_swap, ssize_t size);
 void	ft_quicksort(t_push_swap *push_swap);
 void	ft_insertionsort(t_push_swap *push_swap);
+void	ft_terry(t_push_swap *push_swap);
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait
 rien s’il n’y en a qu’un ou aucun.

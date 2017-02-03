@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 20:09:14 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/03 22:54:10 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,10 +54,11 @@ int		ft_push_swap(t_push_swap *push_swap)
 {
 //	ft_printf("DEPART = \n");
 	ft_size(push_swap);
-	ft_stack_display(push_swap->stack_a, push_swap->stack_b);
+//	ft_stack_display(push_swap->stack_a, push_swap->stack_b);
 //	ft_naif(push_swap);
 //	ft_quicksort(push_swap);
-	ft_mergesort(push_swap);
+//	ft_mergesort(push_swap);
+//	ft_terry(push_swap);
 //	if (push_swap->size_a < 10)
 //		ft_insertionsort(push_swap);
 //	ft_printf("SUITE = \n");
@@ -86,7 +87,7 @@ int		ft_push_swap(t_push_swap *push_swap)
 			ft_stack_display(push_swap->stack_a, push_swap->stack_b);
 		free(line);
 	}*/
-	ft_stack_display(push_swap->stack_a, push_swap->stack_b);
+//	ft_stack_display(push_swap->stack_a, push_swap->stack_b);
 	if (ft_stack_check(push_swap) == 0)
 		ft_putendl("OK");
 	else

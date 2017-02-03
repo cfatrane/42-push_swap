@@ -6,32 +6,57 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:42:41 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 10:59:06 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/03 22:55:19 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int partitionner(tableau T, entier premier, entier dernier, entier pivot)
+int		ft_tabdone(t_push_swap *push_swap)
 {
-	échanger T[pivot] et T[dernier]  // échange le pivot avec le dernier du tableau , le pivot devient le dernier du tableau
-	j := premier
-	pour i de premier à dernier - 1 // la boucle se termine quand i = (dernier-1).
-	si T[i] <= T[dernier] alors
-	échanger T[i] et T[j]
-	j := j + 1
-	échanger T[dernier] et T[j]
-	renvoyer j
+	ssize_t	nbr_tmp;
+	t_stack	*tmpstack;
+
+	tmpstack = push_swap->stack_a;
+	nbr_tmp = tmpstack->nbr;
+	while (tmpstack->next)
+	{
+		//		ft_printf("nbr tmp = %d pivot = %d\n", nbr_tmp, push_swap->pivot);
+		if (nbr_tmp > push_swap->pivot)
+			return (-1);
+		tmpstack = tmpstack->next;
+		nbr_tmp = tmpstack->nbr;
+	}
+	//	if (push_swap->stack_b != NULL)
+	//		return (-1);
+	return (0);
 }
-
-void	tri_rapide(tableau T, int premier, int dernier)
+void	ft_quicksort(t_push_swap *push_swap)
 {
-	int pivot;
-	if(premier < dernier)
+	ft_size(push_swap);
+	push_swap->pivot = push_swap->stack_a->nbr;
+	while (ft_stack_check(push_swap) != 0)
+	{
+		if (ft_tabdone(push_swap) == 0)
+			break ;
+		if (push_swap->stack_a->nbr <= push_swap->pivot)
+		{
+			ft_swap_a(push_swap);
+			ft_reverse_rotate_a(push_swap);
+		}
+		else if (push_swap->stack_a->nbr > push_swap->pivot)
+		{
+			ft_push_b(push_swap);
+		}
+		else
+			ft_rotate_a(push_swap);
+		ft_stack_display(push_swap->stack_a, push_swap->stack_b);
+	}
+	//	ft_quicksort(push_swap);
+	//	ft_push_b(push_swap);
+	/*	while (ft_stack_check(push_swap) != 0)
+		{
 
-	pivot := choix_pivot(T, premier, dernier)
-	pivot := partitionner(T, premier, dernier, pivot)
-	tri_rapide(T, premier, pivot-1)
-tri_rapide(T, pivot+1, dernier)
-	fin si
+		}
+		*/
 }
