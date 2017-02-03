@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/01 19:58:34 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/03 10:23:46 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC_NAME_P = 	main.c				\
 				ft_stack_push.c		\
 				ft_stack_del.c		\
 				ft_utils.c			\
+				ft_algo.c			\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

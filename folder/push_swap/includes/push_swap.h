@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/02 19:29:27 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/03 15:06:32 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,15 @@ void		ft_stack_delone_front(t_stack **stack);
 void		ft_stack_delone_back(t_stack **stack);
 
 size_t		ft_stack_size(t_stack *stack);
+void		ft_size(t_push_swap *push_swap);
 void		ft_stack_display(t_stack *stack_a, t_stack *stack_b);
 t_stack		*ft_stack_at(t_stack *begin_list, size_t nbr);
 
+void	ft_stack_val_bord(t_push_swap *push_swap);
+
+int	ft_naif(t_push_swap *push_swap);
+void	ft_quicksort(t_push_swap *push_swap);
+void	ft_insertionsort(t_push_swap *push_swap);
 /*
 sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait
 rien s’il n’y en a qu’un ou aucun.

@@ -39,3 +39,4 @@ tri_rapide(tableau T, entier premier, entier dernier)
 tri_rapide(T, pivot+1, dernier)
 	fin si
 	fin
+

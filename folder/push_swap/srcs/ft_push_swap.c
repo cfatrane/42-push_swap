@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/02 18:39:20 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/03 15:16:09 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,13 +52,24 @@ int		ft_operation(t_push_swap *push_swap, char *line)
 
 int		ft_push_swap(t_push_swap *push_swap)
 {
-	while (ft_stack_check(push_swap) != 0)
+//	ft_printf("DEPART = \n");
+	ft_size(push_swap);
+	ft_stack_display(push_swap->stack_a, push_swap->stack_b);
+	if (push_swap->size_a < 10)
+		ft_insertionsort(push_swap);
+//	ft_printf("SUITE = \n");
+	ft_stack_val_bord(push_swap);
+//	ft_printf("MAX = %d\tMIN =%d\n", push_swap->max, push_swap->min);
+//	ft_naif(push_swap);
+	ft_quicksort(push_swap);
+/*	while (ft_stack_check(push_swap) != 0)
 	{
 		ft_size(push_swap);
-		if (push_swap->stack_a->nbr > push_swap->stack_a->next->nbr)
-			ft_swap_a(push_swap);
-		ft_putendl("ICI");
-	}
+		ft_naif(push_swap);
+		ft_stack_display(push_swap->stack_a, push_swap->stack_b);
+	//	if (push_swap->stack_a->nbr > push_swap->stack_a->next->nbr)
+	//		ft_swap_a(push_swap);
+	}*/
 /*	char	*line;
 
 	while (get_next_line(0, &line))
@@ -73,10 +84,10 @@ int		ft_push_swap(t_push_swap *push_swap)
 		if (push_swap->display == 1)
 			ft_stack_display(push_swap->stack_a, push_swap->stack_b);
 		free(line);
-	}
+	}*/
 	if (ft_stack_check(push_swap) == 0)
 		ft_putendl("OK");
 	else
 		ft_putendl("KO");
-*/	return (0);
+	return (0);
 }
