@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 18:44:49 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 12:38:07 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/04 19:45:56 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,30 @@ size_t	ft_stack_size(t_stack *stack)
 	return (ft_stack_size(stack->next) + 1);
 }
 
-void	ft_stack_display(t_stack *stack_a, t_stack *stack_b)
+void	ft_stack_display(t_push_swap *push_swap)
 {
 	t_stack	*tmpstack_a;
 	t_stack	*tmpstack_b;
 
-	tmpstack_a = stack_a;
-	tmpstack_b = stack_b;
-	ft_printf("\033[31mStack A = \033[0m");
-	while (tmpstack_a)
+	tmpstack_a = push_swap->stack_a;
+	tmpstack_b = push_swap->stack_b;
+	if (push_swap->display == 1)
 	{
-		ft_printf("\033[31m%d \033[0m", tmpstack_a->nbr);
-		tmpstack_a = tmpstack_a->next;
+		ft_printf("\033[31mStack A = \033[0m");
+		while (tmpstack_a)
+		{
+			ft_printf("\033[31m%d \033[0m", tmpstack_a->nbr);
+			tmpstack_a = tmpstack_a->next;
+		}
+		ft_putchar('\n');
+		ft_printf("\033[36mStack B = \033[0m");
+		while (tmpstack_b)
+		{
+			ft_printf("\033[36m%d \033[0m", tmpstack_b->nbr);
+			tmpstack_b = tmpstack_b->next;
+		}
+		ft_putchar('\n');
 	}
-	ft_putchar('\n');
-	ft_printf("\033[36mStack B = \033[0m");
-	while (tmpstack_b)
-	{
-		ft_printf("\033[36m%d \033[0m", tmpstack_b->nbr);
-		tmpstack_b = tmpstack_b->next;
-	}
-	ft_putchar('\n');
 }
 
 int		ft_stack_check(t_push_swap *push_swap)
@@ -71,6 +74,18 @@ t_stack	*ft_stack_at(t_stack *begin_list, size_t nbr)
 		return (begin_list);
 	else
 		return (ft_stack_at(begin_list->next, nbr - 1));
+}
+
+ssize_t	ft_stack_val_at(t_stack *begin_list, size_t nbr)
+{
+	if (begin_list == NULL)
+		return (-1);
+	if (nbr == 1 && begin_list->next == NULL)
+		return (-1);
+	if (nbr == 0)
+		return (begin_list->nbr);
+	else
+		return (ft_stack_val_at(begin_list->next, nbr - 1));
 }
 
 void	ft_stack_val_bord(t_push_swap *push_swap)

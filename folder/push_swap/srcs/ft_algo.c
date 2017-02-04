@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 10:21:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 22:55:20 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/04 17:46:18 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ int	ft_naif(t_push_swap *push_swap)
 			ft_swap_a(push_swap);
 		else
 			ft_reverse_rotate_a(push_swap);
+	ft_stack_display(push_swap);
 
-		ft_stack_display(push_swap->stack_a, push_swap->stack_b);
 		//	if ()
 	}
 	return (0);
@@ -41,7 +41,7 @@ void	ft_insertionsort(t_push_swap *push_swap)
 		else
 			ft_push_b(push_swap);
 		//		else if (push_swap->stack_a->nbr > push_swap->stack_a->next->nbr)
-		ft_stack_display(push_swap->stack_a, push_swap->stack_b);
+	ft_stack_display(push_swap);
 	}
 }
 /*
@@ -61,10 +61,6 @@ void	ft_insertionsort(t_push_swap *push_swap)
    sort (0
 
    }*/
-void	ft_mergesort(t_push_swap *push_swap)
-{
-	(void)push_swap;
-}
 
 int		ft_stack_check_decroissant(t_push_swap *push_swap)
 {

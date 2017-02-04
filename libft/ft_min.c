@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 10:38:34 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 10:39:29 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/04 18:52:18 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ int	ft_min(int *tab, unsigned int len)
 	}
 	return (min);
 }
-
