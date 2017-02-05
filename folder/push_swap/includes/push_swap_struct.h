@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:51 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 20:15:51 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/05 20:50:03 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,10 @@ typedef struct		s_push_swap
 	int				pivot;
 	int				display;
 	int				ret_fin;
-	ssize_t			min;
-	ssize_t			max;
+	ssize_t			min_a;
+	ssize_t			max_a;
+	ssize_t			min_b;
+	ssize_t			max_b;
 }					t_push_swap;
 
 #endif

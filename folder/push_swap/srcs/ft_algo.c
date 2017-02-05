@@ -6,27 +6,11 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/03 10:21:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/04 17:46:18 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/05 20:16:30 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int	ft_naif(t_push_swap *push_swap)
-{
-	while (ft_stack_check(push_swap) != 0)
-	{
-		ft_size(push_swap);
-		if (push_swap->stack_a->nbr > push_swap->stack_a->next->nbr)
-			ft_swap_a(push_swap);
-		else
-			ft_reverse_rotate_a(push_swap);
-	ft_stack_display(push_swap);
-
-		//	if ()
-	}
-	return (0);
-}
 
 void	ft_insertionsort(t_push_swap *push_swap)
 {

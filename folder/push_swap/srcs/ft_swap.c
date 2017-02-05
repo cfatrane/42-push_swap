@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 11:53:55 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 13:52:03 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/05 20:46:06 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	ft_swap_a(t_push_swap *push_swap)
 {
 	ssize_t	tmp;
 
+	ft_size(push_swap);
 	if (push_swap->size_a > 1)
 	{
 		tmp = push_swap->stack_a->nbr;
@@ -23,12 +24,14 @@ void	ft_swap_a(t_push_swap *push_swap)
 		push_swap->stack_a->next->nbr = tmp;
 		ft_putendl(SA);
 	}
+	ft_size(push_swap);
 }
 
 void	ft_swap_b(t_push_swap *push_swap)
 {
 	ssize_t	tmp;
 
+	ft_size(push_swap);
 	if (push_swap->size_b > 1)
 	{
 		tmp = push_swap->stack_b->nbr;
@@ -36,10 +39,12 @@ void	ft_swap_b(t_push_swap *push_swap)
 		push_swap->stack_b->next->nbr = tmp;
 		ft_putendl(SB);
 	}
+	ft_size(push_swap);
 }
 
 void	ft_swap_s(t_push_swap *push_swap)
 {
+	ft_size(push_swap);
 	if (push_swap->size_a > 1)
 		ft_swap_a(push_swap);
 	if (push_swap->size_b > 1)

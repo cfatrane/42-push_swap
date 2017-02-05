@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/29 18:44:49 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/04 19:45:56 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/05 22:29:52 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,23 +90,46 @@ ssize_t	ft_stack_val_at(t_stack *begin_list, size_t nbr)
 
 void	ft_stack_val_bord(t_push_swap *push_swap)
 {
-	t_stack	*tmpstack;
+	t_stack	*tmpstack_a;
+	t_stack	*tmpstack_b;
 
-	tmpstack = push_swap->stack_a;
-	push_swap->max = push_swap->stack_a->nbr;
-	while (tmpstack)
+	if (push_swap->size_a > 0)
 	{
-		if (push_swap->max < tmpstack->nbr)
-			push_swap->max = tmpstack->nbr;
-		tmpstack = tmpstack->next;
+		tmpstack_a = push_swap->stack_a;
+		push_swap->max_a = push_swap->stack_a->nbr;
+		while (tmpstack_a)
+		{
+			if (push_swap->max_a < tmpstack_a->nbr)
+				push_swap->max_a = tmpstack_a->nbr;
+			tmpstack_a = tmpstack_a->next;
+		}
+		tmpstack_a = push_swap->stack_a;
+		push_swap->min_a = push_swap->stack_a->nbr;
+		while (tmpstack_a)
+		{
+			if (push_swap->min_a > tmpstack_a->nbr)
+				push_swap->min_a = tmpstack_a->nbr;
+			tmpstack_a = tmpstack_a->next;
+		}
 	}
-	tmpstack = push_swap->stack_a;
-	push_swap->min = push_swap->stack_a->nbr;
-	while (tmpstack)
+	if (push_swap->size_b > 0)
 	{
-		if (push_swap->min > tmpstack->nbr)
-			push_swap->min = tmpstack->nbr;
-		tmpstack = tmpstack->next;
+		tmpstack_b = push_swap->stack_b;
+		push_swap->max_b = push_swap->stack_b->nbr;
+		while (tmpstack_b)
+		{
+			if (push_swap->max_b < tmpstack_b->nbr)
+				push_swap->max_b = tmpstack_b->nbr;
+			tmpstack_b = tmpstack_b->next;
+		}
+		tmpstack_b = push_swap->stack_b;
+		push_swap->min_b = push_swap->stack_b->nbr;
+		while (tmpstack_b)
+		{
+			if (push_swap->min_b > tmpstack_b->nbr)
+				push_swap->min_b = tmpstack_b->nbr;
+			tmpstack_b = tmpstack_b->next;
+		}
 	}
 }
 

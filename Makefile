@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/04 15:41:30 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/05 20:27:29 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,7 @@ SRC_NAME_P = 	main.c				\
 				ft_utils.c			\
 				ft_algo.c			\
 				ft_quicksort.c		\
+				ft_naif.c			\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

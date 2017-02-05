@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/04 19:59:44 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/05 20:32:32 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	ft_size(t_push_swap *push_swap)
 
 int		ft_operation(t_push_swap *push_swap, char *line)
 {
+//	const char	*operation[] = ;
 	if (ft_strcmp(line, SA) == 0)
 		ft_swap_a(push_swap);
 	else if (ft_strcmp(line, SB) == 0)
@@ -42,8 +43,6 @@ int		ft_operation(t_push_swap *push_swap, char *line)
 		ft_reverse_rotate_b(push_swap);
 	else if (ft_strcmp(line, RRR) == 0)
 		ft_reverse_rotate_r(push_swap);
-	else if (ft_strcmp(line, RRR) == 0)
-		ft_reverse_rotate_r(push_swap);
 	else
 		return (-1);
 	return (0);
@@ -52,16 +51,16 @@ int		ft_operation(t_push_swap *push_swap, char *line)
 int		ft_push_swap(t_push_swap *push_swap)
 {
 	//	ft_printf("DEPART = \n");
+	ft_stack_val_bord(push_swap);
 	ft_size(push_swap);
 	ft_stack_display(push_swap);
-	//	ft_naif(push_swap);
-	ft_quicksort(push_swap);
+	ft_naif(push_swap);
+//	ft_quicksort(push_swap);
 	//	ft_mergesort(push_swap);
 	//	ft_terry(push_swap);
 	//	if (push_swap->size_a < 10)
 	//		ft_insertionsort(push_swap);
 	//	ft_printf("SUITE = \n");
-	//	ft_stack_val_bord(push_swap);
 	//	ft_printf("MAX = %d\tMIN =%d\n", push_swap->max, push_swap->min);
 	/*	while (ft_stack_check(push_swap) != 0)
 		{
