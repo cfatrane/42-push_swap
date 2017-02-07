@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:42:41 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/07 21:11:27 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/07 21:14:15 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 		//	ft_reverse_rotate_a(push_swap);
 		ft_stack_display(push_swap);
 	}
-	if (is_pivot_a(push_swap) == 0)
+	if (is_pivot_a(push_swap) == -1)
 		while (1)
 		{
 			if (push_swap->stack_a->nbr == push_swap->pivot)
@@ -128,7 +128,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 				break;
 			}
 			else
-				ft_rotate_a(push_swap);
+				ft_swap_a(push_swap);
 			ft_stack_display(push_swap);
 		}
 	ft_stack_display(push_swap);
@@ -152,7 +152,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 			ft_swap_b(push_swap);
 		ft_stack_display(push_swap);
 	}
-	if (is_pivot_b(push_swap) == 0)
+	if (is_pivot_b(push_swap) == -1)
 		while (1)
 		{
 			if (push_swap->stack_b->nbr == push_swap->pivot)
@@ -161,7 +161,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 				break;
 			}
 			else
-				ft_rotate_b(push_swap);
+				ft_swap_b(push_swap);
 			ft_stack_display(push_swap);
 		}
 	/*	while (push_swap->size_b != 1)
