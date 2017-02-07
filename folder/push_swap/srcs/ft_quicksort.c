@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:42:41 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/07 21:14:15 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/07 21:20:33 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ void	ft_quicksort(t_push_swap *push_swap)
 {
 	//	int ret = 5;
 	push_swap->pivot = ft_stack_val_at(push_swap->stack_a, push_swap->size_a - 1);
+	ft_printf("--------------------------------------------\n");
 	ft_printf("BOUCLE 1 |PIVOT 1 = %d|\n", push_swap->pivot);
+	ft_printf("--------------------------------------------\n");
 	size_t i = 0;
 	size_t j = 0;
 	while (ft_tabdone_a(push_swap) != 0)
@@ -68,6 +70,8 @@ void	ft_quicksort(t_push_swap *push_swap)
 	ft_printf("--------------------------------------------\n");
 	ft_printf("nbr de push b = %d\n", j);
 	ft_printf("BOUCLE 1 |PIVOT 1 = %d|\n", push_swap->pivot);
+	ft_printf("--------------------------------------------\n\n");
+	ft_printf("--------------------------------------------\n");
 	ft_printf("Nbr de push = %d\n", i);
 	push_swap->pivot = ft_stack_val_at(push_swap->stack_b, push_swap->size_b - 1);
 	ft_printf("BOUCLE 2 |PIVOT 2 = %d|\n", push_swap->pivot);
@@ -101,6 +105,8 @@ void	ft_quicksort(t_push_swap *push_swap)
 	ft_printf("--------------------------------------------\n");
 	ft_printf("nbr de push a = %d\n", i);
 	ft_printf("BOUCLE 2 |PIVOT 2 = %d|\n", push_swap->pivot);
+	ft_printf("--------------------------------------------\n\n");
+	ft_printf("--------------------------------------------\n");
 	ft_printf("Nbr de push = %d\n", i);
 	//	push_swap->pivot = ft_stack_val_at(push_swap->stack_b, push_swap->size_b - 1);
 	push_swap->pivot = ft_stack_val_at(push_swap->stack_a, i);
@@ -119,7 +125,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 		//	ft_reverse_rotate_a(push_swap);
 		ft_stack_display(push_swap);
 	}
-	if (is_pivot_a(push_swap) == -1)
+/*	if (is_pivot_a(push_swap) == -1)
 		while (1)
 		{
 			if (push_swap->stack_a->nbr == push_swap->pivot)
@@ -130,7 +136,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 			else
 				ft_swap_a(push_swap);
 			ft_stack_display(push_swap);
-		}
+		}*/
 	ft_stack_display(push_swap);
 	ft_printf("--------------------------------------------\n");
 	ft_printf("nbr de push b = %d\n", n);
@@ -152,7 +158,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 			ft_swap_b(push_swap);
 		ft_stack_display(push_swap);
 	}
-	if (is_pivot_b(push_swap) == -1)
+/*	if (is_pivot_b(push_swap) == -1)
 		while (1)
 		{
 			if (push_swap->stack_b->nbr == push_swap->pivot)
@@ -163,7 +169,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 			else
 				ft_swap_b(push_swap);
 			ft_stack_display(push_swap);
-		}
+		}*/
 	/*	while (push_swap->size_b != 1)
 		{
 		if (push_swap->stack_b->nbr < push_swap->stack_b->next->nbr)
