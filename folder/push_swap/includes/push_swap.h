@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/06 09:11:37 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/07 21:09:57 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,37 +75,12 @@ void	ft_mergesort(t_push_swap *push_swap);
 void	ft_quicksort(t_push_swap *push_swap);
 void	ft_insertionsort(t_push_swap *push_swap);
 void	ft_terry(t_push_swap *push_swap);
+
+int	ft_count_a(t_push_swap *push_swap);
 int	ft_count_b(t_push_swap *push_swap);
-/*
-sa : swap a - intervertit les 2 premiers éléments au sommet de la pile a. Ne fait
-rien s’il n’y en a qu’un ou aucun.
-
-sb : swap b - intervertit les 2 premiers éléments au sommet de la pile b. Ne fait
-rien s’il n’y en a qu’un ou aucun.
-
-ss : sa et sb en même temps.
-
-pa : push a - prend le premier élément au sommet de b et le met sur a. Ne fait
-rien si b est vide.
-
-pb : push b - prend le premier élément au sommet de a et le met sur b. Ne fait
-rien si a est vide.
-
-ra : rotate a - décale d’une position vers le haut tous les élements de la pile a.
-Le premier élément devient le dernier.
-
-rb : rotate b - décale d’une position vers le haut tous les élements de la pile b.
-Le premier élément devient le dernier.
-
-rr : ra et rb en même temps.
-
-rra : reverse rotate a - décale d’une position vers le bas tous les élements de
-la pile a. Le dernier élément devient le premier.
-
-rrb : reverse rotate b - décale d’une position vers le bas tous les élements de
-la pile b. Le dernier élément devient le premier.
-
-rrr : rra et rrb en même temps.
-*/
+int		ft_tabdone_a(t_push_swap *push_swap);
+int		ft_tabdone_b(t_push_swap *push_swap);
+int	is_pivot_a(t_push_swap *push_swap);
+int	is_pivot_b(t_push_swap *push_swap);
 
 #endif
