@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:42:41 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/07 21:20:33 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/08 13:52:58 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 	size_t j = 0;
 	while (ft_tabdone_a(push_swap) != 0)
 	{
-		if (push_swap->stack_a->nbr > push_swap->pivot)
+		if (push_swap->stack_a->nbr >= push_swap->pivot)
 		{
 			ft_push_b(push_swap);
 			j++;
@@ -50,7 +50,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 		//	ft_reverse_rotate_a(push_swap);
 		ft_stack_display(push_swap);
 	}
-	if ((is_pivot_a(push_swap) == -1))
+	if ((is_pivot_a(push_swap) == -1)/* && ft_tabdone_a(push_swap) != 0*/)
 	{
 		while (1)
 		{
@@ -71,6 +71,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 	ft_printf("nbr de push b = %d\n", j);
 	ft_printf("BOUCLE 1 |PIVOT 1 = %d|\n", push_swap->pivot);
 	ft_printf("--------------------------------------------\n\n");
+	ft_printf("\033[33m------------------------------------------------------------\n\n\033[0m");
 	ft_printf("--------------------------------------------\n");
 	ft_printf("Nbr de push = %d\n", i);
 	push_swap->pivot = ft_stack_val_at(push_swap->stack_b, push_swap->size_b - 1);
@@ -78,7 +79,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 	ft_printf("--------------------------------------------\n");
 	while ((ft_tabdone_b(push_swap) != 0))
 	{
-		if (push_swap->stack_b->nbr > push_swap->pivot)
+		if (push_swap->stack_b->nbr >= push_swap->pivot)
 		{
 			ft_push_a(push_swap);
 			i++;
@@ -88,7 +89,7 @@ void	ft_quicksort(t_push_swap *push_swap)
 		ft_stack_display(push_swap);
 		//		ft_printf("ret = %d\n", ret);
 	}
-	if (is_pivot_b(push_swap) == -1 && ft_tabdone_b(push_swap) != 0)
+	if (is_pivot_b(push_swap) == -1/* && ft_tabdone_b(push_swap) != 0*/)
 	{
 		while (1)
 		{
@@ -102,14 +103,16 @@ void	ft_quicksort(t_push_swap *push_swap)
 			ft_stack_display(push_swap);
 		}
 	}
+	ft_stack_display(push_swap);
 	ft_printf("--------------------------------------------\n");
 	ft_printf("nbr de push a = %d\n", i);
 	ft_printf("BOUCLE 2 |PIVOT 2 = %d|\n", push_swap->pivot);
 	ft_printf("--------------------------------------------\n\n");
+	ft_printf("\033[33m------------------------------------------------------------\n\n\033[0m");
 	ft_printf("--------------------------------------------\n");
 	ft_printf("Nbr de push = %d\n", i);
 	//	push_swap->pivot = ft_stack_val_at(push_swap->stack_b, push_swap->size_b - 1);
-	push_swap->pivot = ft_stack_val_at(push_swap->stack_a, i);
+	push_swap->pivot = ft_stack_val_at(push_swap->stack_a, i - 1);
 	ft_printf("BOUCLE 3 |PIVOT 3 = %d|\n", push_swap->pivot);
 	ft_printf("--------------------------------------------\n");
 	size_t n = 0;
