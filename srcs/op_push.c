@@ -1,36 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_push.c                                    :+:      :+:    :+:   */
+/*   op_push.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/01 15:17:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:39:35 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/09 13:51:50 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/09 14:03:22 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_stack_push_front(t_stack **stack, ssize_t nbr)
+void	push_a(t_push_swap *env)
 {
-	t_stack	*list;
-
-	list = ft_create_elem_stack(nbr);
-	if ((*stack))
-		list->next = *stack;
-	*stack = list;
+	if (env->size_b > 0)
+	{
+		ft_stack_push_front(&env->stack_a, env->stack_b->nbr);
+		ft_stack_delone_front(&env->stack_b);
+		if (env->action == 1)
+			ft_putendl(PA);
+	}
+	ft_size(env);
 }
 
-void	ft_stack_push_back(t_stack **stack, ssize_t nbr)
+void	push_b(t_push_swap *env)
 {
-	if (*stack)
+	ft_size(env);
+	if (env->size_a > 0)
 	{
-		if ((*stack)->next)
-			ft_stack_push_back(&(*stack)->next, nbr);
-		else
-			(*stack)->next = ft_create_elem_stack(nbr);
+		ft_stack_push_front(&env->stack_b, env->stack_a->nbr);
+		ft_stack_delone_front(&env->stack_a);
+		if (env->action == 1)
+			ft_putendl(PB);
 	}
-	else
-		*stack = ft_create_elem_stack(nbr);
+	ft_size(env);
 }

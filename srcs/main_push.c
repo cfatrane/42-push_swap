@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/03 20:16:07 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 14:16:42 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	*ft_create_elem_stack(ssize_t nbr)
 	return (stack);
 }
 
-t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *push_swap)
+t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *env)
 {
 	ssize_t		i;
 	t_stack		*stack;
@@ -34,7 +34,7 @@ t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *push_swap)
 	{
 		if (ft_strcmp(av[i], "-v") == 0)
 		{
-			push_swap->display = 1;
+			env->display = 1;
 			i++;
 		}
 		while (i < ac)
@@ -53,17 +53,18 @@ t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *push_swap)
 
 int		main(int argc, char **argv)
 {
-	t_push_swap	*push_swap;
+	t_push_swap *env;
 
 	if (argc == 1)
 		return (-1);
-	if (!(push_swap = ft_memalloc(sizeof(t_push_swap))))
+	if (!(env = ft_memalloc(sizeof(t_push_swap))))
 		return (-1);
-	if ((push_swap->stack_a = ft_stack_push_params(argc, argv, push_swap)) == NULL)
+	if ((env->stack_a = ft_stack_push_params(argc, argv, env)) == NULL)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);
 	}
-	ft_push_swap(push_swap);
+	env->action = 1;
+	push_swap(env);
 	return (0);
 }

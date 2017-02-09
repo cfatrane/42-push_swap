@@ -1,36 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push.c                                          :+:      :+:    :+:   */
+/*   ft_stack_del.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 11:54:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/05 20:45:01 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/01 15:18:04 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/09 13:28:43 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_push_a(t_push_swap *push_swap)
+void	ft_stack_delone_front(t_stack **stack)
 {
-	if (push_swap->size_b > 0)
+	t_stack	*to_free;
+
+	if (stack == NULL)
+		exit(EXIT_FAILURE);
+	if ((*stack) != NULL)
 	{
-		ft_stack_push_front(&push_swap->stack_a, push_swap->stack_b->nbr);
-		ft_stack_delone_front(&push_swap->stack_b);
-		ft_putendl(PA);
+		to_free = *stack;
+		*(stack) = (*stack)->next;
+		free(to_free);
 	}
-	ft_size(push_swap);
 }
 
-void	ft_push_b(t_push_swap *push_swap)
+void	ft_stack_delone_back(t_stack **stack)
 {
-	ft_size(push_swap);
-	if (push_swap->size_a > 0)
+	t_stack	*tmp;
+	t_stack	*to_free;
+
+	to_free = *stack;
+	tmp = NULL;
+	while (to_free->next)
 	{
-		ft_stack_push_front(&push_swap->stack_b, push_swap->stack_a->nbr);
-		ft_stack_delone_front(&push_swap->stack_a);
-		ft_putendl(PB);
+		tmp = to_free;
+		to_free = to_free->next;
 	}
-	ft_size(push_swap);
+	if (tmp != NULL)
+		tmp->next = NULL;
+	free(to_free);
 }

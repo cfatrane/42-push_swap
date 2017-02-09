@@ -1,44 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_del.c                                     :+:      :+:    :+:   */
+/*   ft_stack_push.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/01 15:18:04 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:39:34 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/01 15:17:58 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/09 13:28:00 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_stack_delone_front(t_stack **stack)
+void	ft_stack_push_front(t_stack **stack, ssize_t nbr)
 {
-	t_stack	*to_free;
+	t_stack	*list;
 
-	if (stack == NULL)
-		exit(EXIT_FAILURE);
-	if ((*stack) != NULL)
-	{
-		to_free = *stack;
-		*(stack) = (*stack)->next;
-		free(to_free);
-	}
+	list = ft_create_elem_stack(nbr);
+	if ((*stack))
+		list->next = *stack;
+	*stack = list;
 }
 
-void	ft_stack_delone_back(t_stack **stack)
+void	ft_stack_push_back(t_stack **stack, ssize_t nbr)
 {
-	t_stack	*tmp;
-	t_stack	*to_free;
-
-	to_free = *stack;
-	tmp = NULL;
-	while (to_free->next)
+	if (*stack)
 	{
-		tmp = to_free;
-		to_free = to_free->next;
+		if ((*stack)->next)
+			ft_stack_push_back(&(*stack)->next, nbr);
+		else
+			(*stack)->next = ft_create_elem_stack(nbr);
 	}
-	if (tmp != NULL)
-		tmp->next = NULL;
-	free(to_free);
+	else
+		*stack = ft_create_elem_stack(nbr);
 }

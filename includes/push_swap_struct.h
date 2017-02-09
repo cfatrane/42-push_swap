@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker_struct.h                                   :+:      :+:    :+:   */
+/*   push_swap_struct.h                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 14:43:01 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:07:00 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/01 19:24:51 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/09 14:00:30 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_STRUCT_H
-# define CHECKER_STRUCT_H
+#ifndef PUSH_SWAP_STRUCT_H
+# define PUSH_SWAP_STRUCT_H
 
-# include "checker.h"
+# include "push_swap.h"
 
 typedef struct		s_stack
 {
@@ -21,13 +21,20 @@ typedef struct		s_stack
 	struct s_stack	*next;
 }					t_stack;
 
-typedef struct		s_checker
+typedef struct		s_push_swap
 {
 	t_stack			*stack_a;
 	t_stack			*stack_b;
 	size_t			size_a;
 	size_t			size_b;
+	int				pivot;
 	int				display;
-}					t_checker;
+	int				action;
+	int				ret_fin;
+	ssize_t			min_a;
+	ssize_t			max_a;
+	ssize_t			min_b;
+	ssize_t			max_b;
+}					t_push_swap;
 
 #endif

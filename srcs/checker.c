@@ -1,72 +1,73 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker.c                                       :+:      :+:    :+:   */
+/*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/31 18:55:17 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/02 11:48:15 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/09 13:38:08 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/09 13:44:01 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
-void	ft_size(t_checker *checker)
+void	ft_size(t_push_swap *env)
 {
-	checker->size_a = ft_stack_size(checker->stack_a);
-	checker->size_b = ft_stack_size(checker->stack_b);
+	env->size_a = ft_stack_size(env->stack_a);
+	env->size_b = ft_stack_size(env->stack_b);
 }
 
-int		ft_operation(t_checker *checker, char *line)
+int		operation(t_push_swap *env, char *line)
 {
 	if (ft_strcmp(line, SA) == 0)
-		ft_swap_a(checker);
+		swap_a(env);
 	else if (ft_strcmp(line, SB) == 0)
-		ft_swap_b(checker);
+		swap_b(env);
 	else if (ft_strcmp(line, SS) == 0)
-		ft_swap_s(checker);
+		swap_s(env);
 	else if (ft_strcmp(line, PA) == 0)
-		ft_push_a(checker);
+		push_a(env);
 	else if (ft_strcmp(line, PB) == 0)
-		ft_push_b(checker);
+		push_b(env);
 	else if (ft_strcmp(line, RA) == 0)
-		ft_rotate_a(checker);
+		rotate_a(env);
 	else if (ft_strcmp(line, RB) == 0)
-		ft_rotate_b(checker);
+		rotate_b(env);
 	else if (ft_strcmp(line, RR) == 0)
-		ft_rotate_r(checker);
+		rotate_r(env);
 	else if (ft_strcmp(line, RRA) == 0)
-		ft_reverse_rotate_a(checker);
+		reverse_rotate_a(env);
 	else if (ft_strcmp(line, RRB) == 0)
-		ft_reverse_rotate_b(checker);
+		reverse_rotate_b(env);
 	else if (ft_strcmp(line, RRR) == 0)
-		ft_reverse_rotate_r(checker);
+		reverse_rotate_r(env);
 	else if (ft_strcmp(line, RRR) == 0)
-		ft_reverse_rotate_r(checker);
+		reverse_rotate_r(env);
 	else
 		return (-1);
 	return (0);
 }
 
-int		ft_checker(t_checker *checker)
+int		checker(t_push_swap *env)
 {
 	char	*line;
+	int		ret;
 
-	while (get_next_line(0, &line))
+	while ((ret = get_next_line(0, &line) > 0))
 	{
-		ft_size(checker);
-		if (ft_operation(checker, line) == -1)
+		ft_size(env);
+		if (operation(env, line) == -1)
 		{
 			free(line);
 			ft_putendl_fd("Error", 2);
 			exit(0);
 		}
-		if (checker->display == 1)
-			ft_stack_display(checker->stack_a, checker->stack_b);
+		if (env->display == 1)
+			ft_stack_display(env);
 		free(line);
 	}
-	if (ft_stack_check(checker) == 0)
+	if (ft_stack_check(env) == 0)
 		ft_putendl("OK");
 	else
 		ft_putendl("KO");

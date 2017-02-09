@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/07 21:09:32 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/09 13:55:55 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,49 +18,49 @@ NAME_P = push_swap
 
 # Path
 
-SRC_PATH_C = ./folder/checker/srcs/
+SRC_PATH_C = ./srcs/
 
-OBJ_PATH_C = ./folder/checker/objs/
+OBJ_PATH_C = ./objs/
 
-INC_PATH_C = -I./folder/checker/includes/
+INC_PATH_C = -I./includes/
 
-SRC_PATH_P = ./folder/push_swap/srcs/
+SRC_PATH_P = ./srcs/
 
-OBJ_PATH_P = ./folder/push_swap/objs/
+OBJ_PATH_P = ./objs/
 
-INC_PATH_P = -I./folder/push_swap/includes/
+INC_PATH_P = -I./includes/
 
 # Name
 
-SRC_NAME_C = 	main.c				\
-				ft_checker.c		\
-				ft_checker_error.c	\
-				ft_swap.c			\
-				ft_push.c			\
-				ft_rotate.c			\
-				ft_reverse_rotate.c	\
+SRC_NAME_C = 	main_checker.c		\
+				checker.c			\
+				error.c				\
+				op_swap.c			\
+				op_push.c			\
+				op_rotate.c			\
+				op_reverse_rotate.c	\
 				ft_stack_push.c		\
 				ft_stack_del.c		\
 				ft_utils.c			\
 
 OBJ_NAME_C = $(SRC_NAME_C:.c=.o)
 
-SRC_NAME_P = 	main.c				\
-				ft_push_swap.c		\
-				ft_push_swap_error.c\
-				ft_swap.c			\
-				ft_push.c			\
-				ft_rotate.c			\
-				ft_reverse_rotate.c	\
+SRC_NAME_P = 	main_push.c			\
+				push_swap.c			\
+				error.c				\
+				op_swap.c			\
+				op_push.c			\
+				op_rotate.c			\
+				op_reverse_rotate.c\
 				ft_stack_push.c		\
 				ft_stack_del.c		\
 				ft_utils.c			\
 				ft_algo.c			\
-				ft_quicksort.c		\
-				ft_quicksort2.c		\
-				ft_mergesort.c		\
-				ft_naif.c			\
-				ft_terry.c			\
+				algo_mergesort.c	\
+				algo_naif.c			\
+				algo_quicksort.c	\
+				algo_quicksort2.c	\
+				algo_terry.c		\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

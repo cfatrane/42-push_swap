@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checker_error.c                                 :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 16:54:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 18:53:31 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/09 13:33:59 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/09 13:34:00 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
 int	ft_stack_format(char *av)
 {
@@ -49,7 +49,7 @@ int	ft_stack_doublon(t_stack *stack)
 
 int	ft_stack_max(ssize_t av)
 {
-	if (av > INT_MAX || av < INT_MIN)
+	if (av < INT_MIN && av > INT_MAX)
 		return (-1);
 	return (0);
 }

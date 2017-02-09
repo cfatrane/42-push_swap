@@ -6,11 +6,11 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 19:29:03 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 14:09:27 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/checker.h"
+#include "../includes/push_swap.h"
 
 t_stack	*ft_create_elem_stack(ssize_t nbr)
 {
@@ -23,7 +23,7 @@ t_stack	*ft_create_elem_stack(ssize_t nbr)
 	return (stack);
 }
 
-t_stack	*ft_stack_push_params(int ac, char **av, t_checker *checker)
+t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *checker)
 {
 	ssize_t		i;
 	t_stack		*stack;
@@ -53,17 +53,17 @@ t_stack	*ft_stack_push_params(int ac, char **av, t_checker *checker)
 
 int		main(int argc, char **argv)
 {
-	t_checker	*checker;
+	t_push_swap	*env;
 
 	if (argc == 1)
 		return (-1);
-	if (!(checker = ft_memalloc(sizeof(t_checker))))
+	if (!(env = ft_memalloc(sizeof(t_push_swap))))
 		return (-1);
-	if ((checker->stack_a = ft_stack_push_params(argc, argv, checker)) == NULL)
+	if ((env->stack_a = ft_stack_push_params(argc, argv, env)) == NULL)
 	{
 		ft_putendl_fd("Error", 2);
 		return (-1);
 	}
-	ft_checker(checker);
+	checker(env);
 	return (0);
 }
