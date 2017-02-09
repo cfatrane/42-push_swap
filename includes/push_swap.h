@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 14:15:06 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 16:14:13 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,13 @@ ssize_t		ft_stack_val_at(t_stack *begin_list, size_t nbr);
 void	ft_stack_val_bord(t_push_swap *env);
 
 int		algo_naif(t_push_swap *env);
+int		algo_naif_2(t_push_swap *env);
 void	algo_mergesort(t_push_swap *env);
 //void	ft_mergesort(t_push_swap *env, ssize_t size);
 void	algo_quicksort(t_push_swap *env);
 void	ft_insertionsort(t_push_swap *env);
 void	terry(t_push_swap *env);
+void	algo_test(t_push_swap *env);
 
 int	ft_count_a(t_push_swap *env);
 int	ft_count_b(t_push_swap *env);
@@ -82,5 +84,9 @@ int		ft_tabdone_a(t_push_swap *env);
 int		ft_tabdone_b(t_push_swap *env);
 int	is_pivot_a(t_push_swap *env);
 int	is_pivot_b(t_push_swap *env);
+
+void	tri_rapide(int *tableau, int taille);
+void	quickSort(int tableau[], int debut, int fin);
+void tri_fusion(int tableau[],int longueur);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 14:16:53 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 16:14:21 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,21 @@ void	ft_size(t_push_swap *env)
 int		push_swap(t_push_swap *env)
 {
 	//	ft_printf("DEPART = \n");
+	if (ft_stack_check(env) == 0)
+		ft_putendl("OK");
+	else
+	{
+		ft_putendl("KO");
 	ft_stack_val_bord(env);
 	ft_size(env);
 	ft_stack_display(env);
-	algo_naif(env);
-//	quicksort(env);
-//	mergesort(env);
+	algo_naif_2(env);
+//	algo_naif(env);
+//	algo_test(env);
+//	algo_quicksort(env);
+//	algo_mergesort(env);
 //	terry(env);
+	}
 	//	if (env->size_a < 10)
 	//		ft_insertionsort(env);
 	//	ft_printf("SUITE = \n");

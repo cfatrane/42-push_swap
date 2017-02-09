@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:42:41 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 13:54:42 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 15:25:21 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_stack_check_b(t_push_swap *env)
 	return (0);
 }
 
-void	ft_quicksort(t_push_swap *env)
+void	algo_quicksort(t_push_swap *env)
 {
 	//	int ret = 5;
 	env->pivot = ft_stack_val_at(env->stack_a, env->size_a - 1);

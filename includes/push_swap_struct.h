@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:51 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 14:00:30 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 15:27:46 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct		s_push_swap
 	ssize_t			max_a;
 	ssize_t			min_b;
 	ssize_t			max_b;
+	ssize_t			med;
 }					t_push_swap;
 
 #endif

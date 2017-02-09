@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/09 13:55:55 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/09 16:16:00 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,16 +51,20 @@ SRC_NAME_P = 	main_push.c			\
 				op_swap.c			\
 				op_push.c			\
 				op_rotate.c			\
-				op_reverse_rotate.c\
+				op_reverse_rotate.c	\
 				ft_stack_push.c		\
 				ft_stack_del.c		\
 				ft_utils.c			\
 				ft_algo.c			\
 				algo_mergesort.c	\
 				algo_naif.c			\
+				algo_naif_2.c		\
 				algo_quicksort.c	\
 				algo_quicksort2.c	\
 				algo_terry.c		\
+				algo_test.c			\
+				untitled.c			\
+				pretri.c			\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

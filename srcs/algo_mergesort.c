@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:57:47 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 13:57:48 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 15:57:57 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_mergesort(t_push_swap *env)
+void	algo_mergesort(t_push_swap *env)
 {
 	size_t middle = env->size_a / 2;
 	while (middle--)
