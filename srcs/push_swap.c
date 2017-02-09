@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 19:23:35 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 19:44:42 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int		push_swap(t_push_swap *env)
 	{
 		ft_putendl("KO");
 	ft_stack_val_bord(env);
-//	env->med = env->max_a;
 	ft_size(env);
 	ft_stack_display(env);
 	algo_naif_2(env);

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 16:08:10 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 19:34:27 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 19:52:22 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,10 +113,44 @@ int	algo_naif_2(t_push_swap *env)
 			ft_stack_display(env);
 		}
 		ft_stack_display(env);
-
 	}
-
-
+	ft_stack_val_bord(env);
+	env->med = env->max_b;
+/*	while (1)
+	{
+		if (env->stack_b->nbr == env->max_b)
+		{
+			push_a(env);
+			break ;
+		}
+		while (env->stack_b->nbr != env->max_b)
+		{
+			rotate_b(env);
+		}
+	}*/
+	while (env->size_b != 0)
+	{
+		//	while (ft_stack_done_b(env->stack_a) == 0)
+		//		push_a(env);
+		ft_stack_val_bord(env);
+		//		ft_printf("max b = %d\n", env->max_b);
+		size_t i = ft_count_b(env);
+		//		ft_printf("to do = %d & size = %d\n", i, env->size_b);
+		if (env->stack_b->nbr == env->max_b)
+		{
+			push_a(env);
+		}
+		else
+		{
+			if (i <= env->size_b / 2)
+				rotate_b(env);
+			else
+				reverse_rotate_b(env);
+		}
+		ft_stack_display(env);
+	}
+	while (ft_stack_check(env) != 0)
+		rotate_a(env);
 	return (0);
 }
 
