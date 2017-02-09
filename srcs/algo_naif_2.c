@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 16:08:10 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 17:31:15 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 19:34:27 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_count_a_2(t_push_swap *env);
+int		ft_count_a_2(t_push_swap *env);
 int		ft_tabdone_a_2(t_push_swap *env);
 void	ft_stack_val_bord_mid(t_push_swap *env, size_t pb);
 
@@ -21,7 +21,7 @@ int	algo_naif_2(t_push_swap *env)
 	size_t pb = 0;
 	while (ft_tabdone_a_2(env) != 0)
 	{
-		//	size_t i = ft_count_a_2(env);
+		//size_t i = ft_count_a_2(env);
 		if (env->stack_a->nbr > env->med)
 		{
 			push_b(env);
@@ -29,25 +29,25 @@ int	algo_naif_2(t_push_swap *env)
 		}
 		else
 		{
-			//	if (i >= env->size_a / 2)
-			rotate_a(env);
-			//	else
-			//		reverse_rotate_a(env);
+		//	if (i > env->size_a / 2)
+				rotate_a(env);
+		//	else
+		//		reverse_rotate_a(env);
 		}
 		//	reverse_rotate_a(env);
 		ft_stack_display(env);
 	}
-	ft_printf("NBR DE PB = %d\n", pb);
-	size_t temp = env->size_b;
+	//ft_printf("NBR DE PB = %d\n", pb);
+	//	size_t temp = env->size_b;
 	pb = 0;
-	ft_printf("--------------------------------------------\n");
-	ft_printf("NBR DE PB = %d\n", pb);
+	//ft_printf("--------------------------------------------\n");
+	//ft_printf("NBR DE PB = %d\n", pb);
 	while (env->size_a != 1)
 	{
 		ft_stack_val_bord(env);
-		//		ft_printf("max a = %d\n", env->max_a);
-		size_t i = ft_count_a(env);
-		//		ft_printf("to do = %d & size = %d\n", i, env->size_a);
+		//		//ft_printf("max a = %d\n", env->max_a);
+		size_t i = ft_count_a_2(env);
+		//		//ft_printf("to do = %d & size = %d\n", i, env->size_a);
 		if (env->stack_a->nbr < env->max_a)
 		{
 			push_b(env);
@@ -55,7 +55,7 @@ int	algo_naif_2(t_push_swap *env)
 		}
 		else
 		{
-			if (i <= env->size_a / 2)
+			if (i < env->size_a / 2)
 				rotate_a(env);
 			else
 				reverse_rotate_a(env);
@@ -63,48 +63,50 @@ int	algo_naif_2(t_push_swap *env)
 		ft_stack_display(env);
 	}
 	ft_stack_val_bord(env);
-	size_t l = 0;
+	//	size_t l = 0;
 	size_t rb = 0;
-	ft_printf("NBR DE PB = %d\n", pb);
-	ft_printf("--------------------------------------------\n");
+	size_t jk = 0;
+	//ft_printf("NBR DE PB = %d\n", pb);
+	//ft_printf("--------------------------------------------\n");
 	while (1)
 	{
-		if (l == temp)
+		if (pb == 0)
 			break ;
 		ft_stack_val_bord_mid(env, pb);
-		ft_printf("MAX ENTRE 0 et %d = %d\n", pb, env->max_b);
+		//ft_printf("MAX ENTRE 0 et %d = %d\n", pb, env->max_b);
 		while (env->stack_b->nbr != env->max_b)
 		{
-		/*	if (env->stack_b->nbr == env->max_b)
-			{
+			/*	if (env->stack_b->nbr == env->max_b)
+				{
 				push_a(env);
 				l++;
 				pb--;
 				break ;
-			}
-			else
-			{
-				//	if (i <= env->size_b / 2)
+				}
+				else
+				{
+			//	if (i <= env->size_b / 2)
 			*/	rotate_b(env);
-				ft_stack_display(env);
-				rb++;
-				ft_printf("rb vaut = %d\n", rb);
-				//	else
-				//		reverse_rotate_b(env);
-		//	}
+			ft_stack_display(env);
+			rb++;
+			//ft_printf("rb vaut = %d\n", rb);
+			//	else
+			//		reverse_rotate_b(env);
+			//	}
 		}
 		if (env->stack_b->nbr == env->max_b)
 		{
-				push_a(env);
-				pb--;
-				ft_stack_display(env);
+			push_a(env);
+			pb--;
+			ft_stack_display(env);
 		}
-		while (rb--)
+		while ((rb-- + jk) > 0)
 		{
-				ft_printf("rb vaut = %d\n", rb);
+			//ft_printf("rb vaut = %d\n", rb);
 			reverse_rotate_b(env);
 		}
-			ft_stack_display(env);
+		jk++;
+		ft_stack_display(env);
 		if (env->stack_b->nbr > env->max_b)
 		{
 			rotate_b(env);
@@ -130,7 +132,7 @@ void	ft_stack_val_bord_mid(t_push_swap *env, size_t pb)
 		env->max_b = env->stack_b->nbr;
 		while (tmpstack_b)
 		{
-			ft_printf("NBR = %d ", tmpstack_b->nbr);
+			//ft_printf("NBR = %d ", tmpstack_b->nbr);
 			if (m == pb )
 				break ;
 			if (env->max_b < tmpstack_b->nbr && tmpstack_b->nbr < env->med)
@@ -147,18 +149,8 @@ void	ft_stack_val_bord_mid(t_push_swap *env, size_t pb)
 			tmpstack_b = tmpstack_b->next;
 		}
 	}
-	ft_putchar('\n');
+	//	ft_putchar('\n');
 }
-
-
-
-
-
-
-
-
-
-
 
 int	ft_count_a_2(t_push_swap *env)
 {
@@ -169,9 +161,11 @@ int	ft_count_a_2(t_push_swap *env)
 	tmpstack = env->stack_a;
 	while (tmpstack->nbr != env->med)
 	{
+		//	ft_printf("NBR = %d a i = %d ", tmpstack->nbr, i);
 		i++;
 		tmpstack = tmpstack->next;
 	}
+	ft_putchar('\n');
 	return (i);
 }
 
@@ -185,7 +179,7 @@ int		ft_tabdone_a_2(t_push_swap *env)
 	while (tmpstack/*->next*/)
 	{
 		nbr_tmp = tmpstack->nbr;
-		//	ft_printf("nbr tmp = %d pivot = %d\n", nbr_tmp, env->pivot);
+		//	//ft_printf("nbr tmp = %d pivot = %d\n", nbr_tmp, env->pivot);
 		if (nbr_tmp > env->med)
 			return (-1);
 		tmpstack = tmpstack->next;

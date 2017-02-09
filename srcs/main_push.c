@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 16:13:00 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/09 18:58:46 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int		main(int argc, char **argv)
 	i = 0;
 	while (i < argc - 1)
 	{
-		ft_printf("%d ", tableau[i]);
+//		ft_printf("%d ", tableau[i]);
 		i++;
 	}
 	tri_rapide(tableau, argc - 1);
@@ -98,7 +98,7 @@ int		main(int argc, char **argv)
 	}
 	int middle = (argc - 1) / 2;
 	env->med = tableau[middle];
-	ft_printf("\n MEDIANE = %d ", env->med);
+//	ft_printf("\n MEDIANE = %d ", env->med);
 
 	env->action = 1;
 	push_swap(env);
