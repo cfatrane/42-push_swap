@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:57:41 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 18:09:14 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/10 11:48:45 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ int	algo_naif(t_push_swap *env)
 			else
 				reverse_rotate_a(env);
 		}
-		ft_stack_display(env);
 	}
+//	exit (0);
 	ft_stack_val_bord(env);
 	ft_printf("--------------------------------------------\n");
 	while (env->size_b != 0)
@@ -58,7 +58,6 @@ int	algo_naif(t_push_swap *env)
 			else
 				reverse_rotate_b(env);
 		}
-		ft_stack_display(env);
 	}
 	return (0);
 }

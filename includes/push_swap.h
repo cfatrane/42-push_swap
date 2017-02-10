@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 16:14:13 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/10 14:36:52 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,10 @@ ssize_t		ft_stack_val_at(t_stack *begin_list, size_t nbr);
 void	ft_stack_val_bord(t_push_swap *env);
 
 int		algo_naif(t_push_swap *env);
-int		algo_naif_2(t_push_swap *env);
+void	algo_naif_2(t_push_swap *env);
+void	algo_naif_3(t_push_swap *env);
+void	algo_naif_4(t_push_swap *env);
+void	algo_min(t_push_swap *env);
 void	algo_mergesort(t_push_swap *env);
 //void	ft_mergesort(t_push_swap *env, ssize_t size);
 void	algo_quicksort(t_push_swap *env);
