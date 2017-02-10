@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/10 16:51:51 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/10 20:07:17 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ SRC_NAME_P = 	main_push.c			\
 				algo_naif_2.c		\
 				algo_naif_3.c		\
 				algo_naif_4.c		\
+				algo_naif_5.c		\
 				algo_min.c			\
 				algo_quicksort.c	\
 				algo_quicksort2.c	\
@@ -92,7 +93,8 @@ LFT = -lft
 
 PRINTF = -lftprintf
 
-CC = gcc $(CFLAGS)
+#CC = gcc $(CFLAGS)
+CC = gcc 
 
 CFLAGS = -Wall -Wextra -Werror
 

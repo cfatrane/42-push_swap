@@ -6,11 +6,12 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 20:00:56 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/10 14:37:10 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/10 20:07:29 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+void	ft_card_sort(t_push_swap *piles);
 
 void	ft_size(t_push_swap *env)
 {
@@ -29,12 +30,15 @@ int		push_swap(t_push_swap *env)
 		ft_stack_val_bord(env);
 		ft_size(env);
 		ft_stack_display(env);
-	//	if (env->size_a <= 10)
+//	if (env->size_a <= 10)
+//			ft_card_sort(env);
+//		else
 	//		algo_min(env);
 		//	algo_naif(env);
-		//	algo_naif_2(env);
+//			algo_naif_2(env);
 		//	algo_naif_3(env);
-			algo_naif_4(env);
+//			algo_naif_4(env);
+			algo_naif_5(env);
 		//	algo_test(env);
 		//	algo_quicksort(env);
 		//	algo_mergesort(env);

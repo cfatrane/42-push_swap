@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:33:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 13:34:00 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/10 19:58:29 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	ft_stack_format(char *av)
 {
 	while (*av)
 	{
-		if (*av == '-')
+		if (*av == '-' || *av == '+')
 			av++;
 		if (!ft_isdigit(*av))
 			return (-1);

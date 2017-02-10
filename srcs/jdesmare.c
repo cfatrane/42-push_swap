@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:39:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/10 16:52:48 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/10 19:46:08 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static int	ft_find_closest_upper(t_push_swap *piles, int nb)
 {
 	int	closest;
 	int	current;
-	int	i;
+	size_t	i;
 	t_stack *tmp = piles->stack_a;
 
 	//	current = ft_ismax(piles->stack_a, piles->size_a);
@@ -37,9 +37,9 @@ static int	ft_find_closest_upper(t_push_swap *piles, int nb)
 }
 
 
-int	ft_find_num_pos(t_stack *tab, int num, int size)
+int	ft_find_num_pos(t_stack *tab, ssize_t num, size_t size)
 {
-	int	i;
+	size_t	i;
 	t_stack *tmp = tab;
 
 	i = 0;
@@ -56,8 +56,9 @@ int	ft_find_num_pos(t_stack *tab, int num, int size)
 
 void	ft_card_sort(t_push_swap *piles)
 {
-	int	closest;
-	int	closest_pos;
+	ssize_t	closest;
+	size_t	closest_pos;
+	size_t pa = 0;
 
 	while (piles->size_b > 0)
 	{
@@ -76,8 +77,14 @@ void	ft_card_sort(t_push_swap *piles)
 			while (piles->stack_a->nbr != closest)
 				rotate_a(piles);
 		push_a(piles);
+		pa++;
+//		if (pa == pb)
+//			break ;
 	}
 //	while (ft_is_finished(piles) == 0)
+//	while (ft_stack_check(piles) != 0)
+//		ft_stack_val_bord(piles);
+//	while (piles->stack_a->nbr != piles->min_a)
 	while (ft_stack_check(piles) != 0)
 	{
 		if (ft_find_num_pos(piles->stack_a, piles->min_a/*ft_ismin(piles->a, piles->size_a)*/,
