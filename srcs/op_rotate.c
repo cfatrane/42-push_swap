@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:51:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 14:06:46 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/10 09:19:22 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	rotate_a(t_push_swap *env)
 		ft_stack_delone_front(&env->stack_a);
 		if (env->action == 1)
 			ft_putendl(RA);
+		ft_stack_display(env);
 	}
 	ft_size(env);
 }
@@ -34,6 +35,7 @@ void	rotate_b(t_push_swap *env)
 		ft_stack_delone_front(&env->stack_b);
 		if (env->action == 1)
 			ft_putendl(RB);
+		ft_stack_display(env);
 	}
 	ft_size(env);
 }
