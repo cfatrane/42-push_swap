@@ -6,24 +6,24 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:39:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/10 19:46:08 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/11 19:43:45 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	ft_find_closest_upper(t_push_swap *piles, int nb)
+static int	ft_find_closest_upper(t_push_swap *env, int nb)
 {
 	int	closest;
 	int	current;
 	size_t	i;
-	t_stack *tmp = piles->stack_a;
+	t_stack *tmp = env->stack_a;
 
-	//	current = ft_ismax(piles->stack_a, piles->size_a);
-	current = piles->max_a;
+	//	current = ft_ismax(env->stack_a, env->size_a);
+	current = env->max_a;
 	closest = (current > nb) ? current : -1000000;
 	i = 0;
-	while (i < piles->size_a)
+	while (i < env->size_a)
 	{
 		if (tmp->nbr > nb && tmp->nbr < current)
 		{
@@ -54,43 +54,44 @@ int	ft_find_num_pos(t_stack *tab, ssize_t num, size_t size)
 		return (-1);
 }
 
-void	ft_card_sort(t_push_swap *piles)
+void	ft_card_sort(t_push_swap *env)
 {
 	ssize_t	closest;
 	size_t	closest_pos;
 	size_t pa = 0;
 
-	while (piles->size_b > 0)
+	while (env->size_b > 0)
 	{
-		closest = ft_find_closest_upper(piles, piles->stack_b->nbr);
+		closest = ft_find_closest_upper(env, env->stack_b->nbr);
 		if (closest == -1000000)
 		{
-			ft_stack_val_bord(piles);
-			//	closest = ft_ismin(piles->a, piles->size_a);
-			closest = piles->min_a;
+			ft_stack_val_bord(env);
+			//	closest = ft_ismin(env->a, env->size_a);
+			closest = env->min_a;
 		}
-		closest_pos = ft_find_num_pos(piles->stack_a, closest, piles->size_a);
-		if (closest_pos > (piles->size_a - 1) / 2)
-			while (piles->stack_a->nbr != closest)
-				reverse_rotate_a(piles);
+		closest_pos = ft_find_num_pos(env->stack_a, closest, env->size_a);
+		if (closest_pos > (env->size_a - 1) / 2)
+			while (env->stack_a->nbr != closest)
+				reverse_rotate_a(env);
 		else
-			while (piles->stack_a->nbr != closest)
-				rotate_a(piles);
-		push_a(piles);
+			while (env->stack_a->nbr != closest)
+				rotate_a(env);
+		push_a(env);
+		usleep(500000);
 		pa++;
 //		if (pa == pb)
 //			break ;
 	}
-//	while (ft_is_finished(piles) == 0)
-//	while (ft_stack_check(piles) != 0)
-//		ft_stack_val_bord(piles);
-//	while (piles->stack_a->nbr != piles->min_a)
-	while (ft_stack_check(piles) != 0)
+//	while (ft_is_finished(env) == 0)
+//	while (ft_stack_check(env) != 0)
+//		ft_stack_val_bord(env);
+//	while (env->stack_a->nbr != env->min_a)
+	while (ft_stack_check(env) != 0)
 	{
-		if (ft_find_num_pos(piles->stack_a, piles->min_a/*ft_ismin(piles->a, piles->size_a)*/,
-					piles->size_a) < piles->size_a / 2)
-			rotate_a(piles);
+		if (ft_find_num_pos(env->stack_a, env->min_a/*ft_ismin(env->a, env->size_a)*/,
+					env->size_a) < env->size_a / 2)
+			rotate_a(env);
 		else
-			reverse_rotate_a(piles);
+			reverse_rotate_a(env);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/02 13:42:41 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/10 14:37:32 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/11 19:55:45 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	algo_quicksort(t_push_swap *env)
 		else
 			rotate_a(env);
 		//	reverse_rotate_a(env);
-		ft_stack_display(env);
 	}
 	if ((is_pivot_a(env) == -1)/* && ft_tabdone_a(env) != 0*/)
 	{
@@ -62,10 +61,8 @@ void	algo_quicksort(t_push_swap *env)
 			}
 			else
 				rotate_a(env);
-			ft_stack_display(env);
 		}
 	}
-	ft_stack_display(env);
 	//	while (env->stack_a->nbr != env->pivot)
 	//		rotate_a(env);
 	ft_printf("--------------------------------------------\n");
@@ -87,7 +84,6 @@ void	algo_quicksort(t_push_swap *env)
 		}
 		else
 			rotate_b(env);
-		ft_stack_display(env);
 		//		ft_printf("ret = %d\n", ret);
 	}
 	if (is_pivot_b(env) == -1/* && ft_tabdone_b(env) != 0*/)
@@ -102,10 +98,8 @@ void	algo_quicksort(t_push_swap *env)
 			}
 			else
 				rotate_b(env);
-			ft_stack_display(env);
 		}
 	}
-	ft_stack_display(env);
 	ft_printf("--------------------------------------------\n");
 	ft_printf("nbr de push a = %d\n", i);
 	ft_printf("BOUCLE 2 |PIVOT 2 = %d|\n", env->pivot);
@@ -133,7 +127,6 @@ void	algo_quicksort(t_push_swap *env)
 		else
 			swap_a(env);
 		//	reverse_rotate_a(env);
-		ft_stack_display(env);
 	}
 /*	if (is_pivot_a(env) == -1)
 		while (1)
@@ -145,9 +138,7 @@ void	algo_quicksort(t_push_swap *env)
 			}
 			else
 				swap_a(env);
-			ft_stack_display(env);
 		}*/
-	ft_stack_display(env);
 	ft_printf("--------------------------------------------\n");
 	ft_printf("nbr de push b = %d\n", n);
 	ft_printf("BOUCLE 3 |PIVOT 3 = %d|\n", env->pivot);
@@ -168,7 +159,6 @@ void	algo_quicksort(t_push_swap *env)
 		}
 		else
 			swap_b(env);
-		ft_stack_display(env);
 	}
 	else
 		env->pivot = ft_stack_val_at(env->stack_b, n - 2);
@@ -192,7 +182,6 @@ void	algo_quicksort(t_push_swap *env)
 			rotate_b(env);
 			nbrrotb++;
 		}
-		ft_stack_display(env);
 	}
 	while (nbrrotb--)
 		reverse_rotate_b(env);
@@ -206,7 +195,6 @@ void	algo_quicksort(t_push_swap *env)
 			}
 			else
 				swap_b(env);
-			ft_stack_display(env);
 		}*/
 	/*	while (env->size_b != 1)
 		{
@@ -217,7 +205,6 @@ void	algo_quicksort(t_push_swap *env)
 		push_a(env);
 		i++;
 		}
-		ft_stack_display(env);
 		}
 		push_a(env);
 		i++;
@@ -227,7 +214,6 @@ void	algo_quicksort(t_push_swap *env)
 		while (i--)
 		{
 		reverse_rotate_a(env);
-		ft_stack_display(env);
 		}
 		ft_printf("--------------------------------------------\n");
 		while (ft_tabdone_a(env) != 0 && k--)
@@ -240,7 +226,6 @@ void	algo_quicksort(t_push_swap *env)
 		else
 		rotate_a(env);
 	//	reverse_rotate_a(env);
-	ft_stack_display(env);
 	}
 	ft_printf("--------------------------------------------\n");
 	while (env->size_b != 1)
@@ -258,7 +243,6 @@ void	algo_quicksort(t_push_swap *env)
 	else
 	reverse_rotate_b(env);
 	}
-	ft_stack_display(env);
 	if (env->stack_b->nbr != env->max_b)
 	//	if (env->stack_b->nbr < env->stack_b->next->nbrpush_swap->max_b)
 	swap_b(env);
@@ -267,7 +251,6 @@ void	algo_quicksort(t_push_swap *env)
 	push_a(env);
 	i++;
 	}
-	ft_stack_display(env);
 	}
 	push_a(env);
 	reverse_rotate_a(env);
@@ -276,7 +259,6 @@ void	algo_quicksort(t_push_swap *env)
 
 	//	while (ft_tabdone_a(env) != 0)
 	//	{
-	//		ft_stack_display(env);
 
 	//	}
 
@@ -301,12 +283,10 @@ void	algo_quicksort(t_push_swap *env)
    if (env->stack_a->nbr <= env->pivot)
    {
    swap_a(env);
-   ft_stack_display(env);
    if (env->stack_a->nbr > env->pivot)
    push_b(env);
 //	if (env->stack_a->nbr > env->stack_a->next->nbr)
 //		reverse_rotate_a(env);
-ft_stack_display(env);
 }
 else if (env->stack_a->nbr > env->pivot)
 {
@@ -315,14 +295,10 @@ nbrpushb++;
 }
 //		else
 //			rotate_a(env);
-ft_stack_display(env);
 }
 reverse_rotate_a(env);
-ft_stack_display(env);
 push_b(env);
-ft_stack_display(env);
 //	reverse_rotate_b(env);
-ft_stack_display(env);
 ft_size(env);
 env->pivot = ft_stack_val_at(env->stack_a, env->size_a - 1);
 ft_printf("---------------------\n", env->pivot);
@@ -334,12 +310,10 @@ ft_size(env);
 if (env->stack_a->nbr <= env->pivot)
 {
 swap_a(env);
-ft_stack_display(env);
 if (env->stack_a->nbr > env->pivot)
 push_b(env);
 //	if (env->stack_a->nbr > env->stack_a->next->nbr)
 //		reverse_rotate_a(env);
-ft_stack_display(env);
 }
 else if (env->stack_a->nbr > env->pivot)
 {
@@ -348,18 +322,14 @@ nbrpushb++;
 }
 //		else
 //			rotate_a(env);
-ft_stack_display(env);
 }
 reverse_rotate_a(env);
-ft_stack_display(env);
 ft_size(env);
 //	push_b(env);
-//	ft_stack_display(env);
 //	exit (0);
 ft_printf("nbrpushb = %d\n", nbrpushb);
 break ;
 //	reverse_rotate_b(env);
-//	ft_stack_display(env);
 ft_size(env);
 env->pivot = ft_stack_val_at(env->stack_b, env->size_b - 1);
 ft_printf("---------------------\n", env->pivot);
@@ -371,10 +341,8 @@ while (ft_tabdone_b(env) != 0)
 	if (env->stack_b->nbr <= env->pivot)
 	{
 		swap_b(env);
-		ft_stack_display(env);
 		//	if (env->stack_b->nbr > env->stack_b->next->nbr)
 		reverse_rotate_b(env);
-		ft_stack_display(env);
 	}
 	else if (env->stack_b->nbr > env->pivot)
 	{
@@ -384,7 +352,6 @@ while (ft_tabdone_b(env) != 0)
 	//		push_a(env);
 	//		else
 	//			rotate_a(env);
-	ft_stack_display(env);
 }
 //	push_a(env);
 //	reverse_rotate_a(env);

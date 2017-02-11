@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:57:47 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 15:57:57 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/11 19:53:12 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	algo_mergesort(t_push_swap *env)
 	while (middle--)
 	{
 		push_b(env);
-		ft_stack_display(env);
 	}
 	middle = env->size_a / 2;
 /*	while (env->size_a != 1)
@@ -38,7 +37,6 @@ void	algo_mergesort(t_push_swap *env)
 			else
 				ft_reverse_rotate_a(env);
 		}
-		ft_stack_display(env);
 	}
 	ft_stack_val_bord(env);
 //	ft_printf("--------------------------------------------\n");
@@ -61,7 +59,6 @@ void	algo_mergesort(t_push_swap *env)
 			else
 				ft_reverse_rotate_b(env);
 		}
-		ft_stack_display(env);
 	}*/
 /*	while (1)
 	{
@@ -91,6 +88,5 @@ void	algo_mergesort(t_push_swap *env)
 			ft_reverse_rotate_b(env);
 			ft_reverse_rotate_b(env);
 		}
-		ft_stack_display(env);
 	}*/
 }

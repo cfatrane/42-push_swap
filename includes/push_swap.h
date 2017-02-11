@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/10 20:07:06 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/11 19:44:29 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	algo_quicksort(t_push_swap *env);
 void	ft_insertionsort(t_push_swap *env);
 void	terry(t_push_swap *env);
 void	algo_test(t_push_swap *env);
+void	ft_card_sort(t_push_swap *env);
 
 int	ft_count_a(t_push_swap *env);
 int	ft_count_b(t_push_swap *env);
