@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/10 20:07:17 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/12 15:25:03 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,8 +93,7 @@ LFT = -lft
 
 PRINTF = -lftprintf
 
-#CC = gcc $(CFLAGS)
-CC = gcc 
+CC = gcc $(CFLAGS)
 
 CFLAGS = -Wall -Wextra -Werror
 

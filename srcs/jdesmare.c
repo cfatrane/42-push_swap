@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:39:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/11 19:43:45 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:25:30 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	ft_find_closest_upper(t_push_swap *env, int nb)
 }
 
 
-int	ft_find_num_pos(t_stack *tab, ssize_t num, size_t size)
+size_t	ft_find_num_pos(t_stack *tab, ssize_t num, size_t size)
 {
 	size_t	i;
 	t_stack *tmp = tab;
@@ -66,7 +66,6 @@ void	ft_card_sort(t_push_swap *env)
 		if (closest == -1000000)
 		{
 			ft_stack_val_bord(env);
-			//	closest = ft_ismin(env->a, env->size_a);
 			closest = env->min_a;
 		}
 		closest_pos = ft_find_num_pos(env->stack_a, closest, env->size_a);
@@ -77,18 +76,11 @@ void	ft_card_sort(t_push_swap *env)
 			while (env->stack_a->nbr != closest)
 				rotate_a(env);
 		push_a(env);
-		usleep(500000);
 		pa++;
-//		if (pa == pb)
-//			break ;
 	}
-//	while (ft_is_finished(env) == 0)
-//	while (ft_stack_check(env) != 0)
-//		ft_stack_val_bord(env);
-//	while (env->stack_a->nbr != env->min_a)
 	while (ft_stack_check(env) != 0)
 	{
-		if (ft_find_num_pos(env->stack_a, env->min_a/*ft_ismin(env->a, env->size_a)*/,
+		if (ft_find_num_pos(env->stack_a, env->min_a,
 					env->size_a) < env->size_a / 2)
 			rotate_a(env);
 		else
