@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/12 15:39:23 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/12 15:46:04 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,12 +58,8 @@ SRC_NAME_P = 	main_push.c			\
 				ft_algo.c			\
 				algo_mergesort.c	\
 				algo_naif.c			\
-				algo_naif_2.c		\
 				algo_naif_4.c		\
 				algo_min.c			\
-				algo_quicksort.c	\
-				algo_quicksort2.c	\
-				algo_terry.c		\
 				algo_test.c			\
 				untitled.c			\
 				pretri.c			\
