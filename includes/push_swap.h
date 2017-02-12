@@ -6,12 +6,12 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 17:24:25 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 18:48:07 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef env_H
-# define env_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 # include "../libft/libft.h"
 # include "../ft_printf/includes/ft_printf.h"
@@ -67,13 +67,16 @@ t_stack		*ft_stack_at(t_stack *begin_list, size_t nbr);
 ssize_t		ft_stack_val_at(t_stack *begin_list, size_t nbr);
 void		stack_val_bord(t_push_swap *env);
 
-void		algo_hundred(t_push_swap *env);
+void		algo_min(t_push_swap *env);
+void		algo_sup(t_push_swap *env);
+void		algo_card_sort(t_push_swap *env);
+
 int			tabdone_a(t_push_swap *push_swap);
 int			tabdone_b(t_push_swap *push_swap);
 
-void		ft_card_sort(t_push_swap *env);
 
-void		convert_tab(t_push_swap *env);
+int			*convert_tab(t_push_swap *env);
+void		define_med(t_push_swap *env, int *tab);
 void		tri_rapide(int *tableau, int taille);
 
 #endif

@@ -6,32 +6,35 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 14:31:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:51:09 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 19:16:25 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	define_med(t_push_swap *env, int *tab, size_t i)
+void	define_med(t_push_swap *env, int *tab)
 {
+	int dif;
+
 	if (env->size_a >= 50 && env->size_a <= 250)
 	{
-		env->med = tab[i / 5];
-		env->pad = env->size_a / 5;
+		dif = 5;
+		env->med = tab[env->size_a / dif];
+		env->pad = env->size_a / dif;
 	}
 	else if (env->size_a > 250 && env->size_a < 500)
 	{
-		env->med = tab[i / 5];
-		env->pad = env->size_a / 5;
+		env->med = tab[env->size_a / 2];
+		env->pad = env->size_a / 2;
 	}
 	else if (env->size_a >= 500 && env->size_a <= 10000)
 	{
-		env->med = tab[i / 10];
+		env->med = tab[env->size_a / 10];
 		env->pad = env->size_a / 10;
 	}
 }
 
-void	convert_tab(t_push_swap *env)
+int		*convert_tab(t_push_swap *env)
 {
 	t_stack	*tmp;
 	int		*tab;
@@ -46,11 +49,8 @@ void	convert_tab(t_push_swap *env)
 		i++;
 		tmp = tmp->next;
 	}
-	tri_rapide(tab, env->size_a);
-	i = 0;
-	while (i < env->size_a)
-		i++;
-	define_med(env, tab, i);
+//	tri_rapide(tab, env->size_a);
+	return (tab);
 }
 
 void	tri_rapide(int *tab, int taille)
@@ -61,11 +61,11 @@ void	tri_rapide(int *tab, int taille)
 	int	tmp;
 
 	mur = 0;
-	courant = 0;
+	courant = -1;
 	if (taille < 2)
 		return ;
 	pivot = tab[taille - 1];
-	while (courant < taille)
+	while (++courant < taille)
 	{
 		if (tab[courant] <= pivot)
 		{
@@ -77,7 +77,6 @@ void	tri_rapide(int *tab, int taille)
 			}
 			mur++;
 		}
-		courant++;
 	}
 	tri_rapide(tab, mur - 1);
 	tri_rapide(tab + mur - 1, taille - mur + 1);

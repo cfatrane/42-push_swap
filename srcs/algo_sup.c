@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_hundred.c                                     :+:      :+:    :+:   */
+/*   algo_sup.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 16:17:33 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:51:36 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/12 18:10:38 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/12 19:36:26 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	algo_hundred(t_push_swap *env)
+void	algo_sup(t_push_swap *env)
 {
 	while (1)
 	{
@@ -28,5 +28,6 @@ void	algo_hundred(t_push_swap *env)
 		if (env->med > env->max_a)
 			break ;
 	}
-	ft_card_sort(env);
+	algo_card_sort(env);
 }
+
