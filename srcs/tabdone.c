@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 15:39:00 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 15:39:10 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:51:22 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,9 @@ int		tabdone_a(t_push_swap *push_swap)
 	t_stack	*tmpstack;
 
 	tmpstack = push_swap->stack_a;
-	//	nbr_tmp = tmpstack->nbr;
 	while (tmpstack/*->next*/)
 	{
 		nbr_tmp = tmpstack->nbr;
-	//	ft_printf("nbr tmp = %d pivot = %d\n", nbr_tmp, push_swap->pivot);
 		if (nbr_tmp < push_swap->med)
 			return (-1);
 		tmpstack = tmpstack->next;
@@ -36,11 +34,9 @@ int		tabdone_b(t_push_swap *push_swap)
 	t_stack	*tmpstack;
 
 	tmpstack = push_swap->stack_b;
-	//	nbr_tmp = tmpstack->nbr;
 	while (tmpstack/*->next*/)
 	{
 		nbr_tmp = tmpstack->nbr;
-	//	ft_printf("nbr tmp = %d pivot = %d\n", nbr_tmp, push_swap->pivot);
 		if (nbr_tmp < push_swap->med)
 			return (-1);
 		tmpstack = tmpstack->next;
