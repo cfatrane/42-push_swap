@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/12 15:25:03 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/12 15:39:23 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,9 +59,7 @@ SRC_NAME_P = 	main_push.c			\
 				algo_mergesort.c	\
 				algo_naif.c			\
 				algo_naif_2.c		\
-				algo_naif_3.c		\
 				algo_naif_4.c		\
-				algo_naif_5.c		\
 				algo_min.c			\
 				algo_quicksort.c	\
 				algo_quicksort2.c	\
@@ -70,6 +68,7 @@ SRC_NAME_P = 	main_push.c			\
 				untitled.c			\
 				pretri.c			\
 				jdesmare.c			\
+				tabdone.c			\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

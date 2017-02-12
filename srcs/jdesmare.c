@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:39:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 15:25:30 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:26:56 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ static int	ft_find_closest_upper(t_push_swap *env, int nb)
 	int	closest;
 	int	current;
 	size_t	i;
-	t_stack *tmp = env->stack_a;
+	t_stack	*tmp;
 
-	//	current = ft_ismax(env->stack_a, env->size_a);
 	current = env->max_a;
 	closest = (current > nb) ? current : -1000000;
+	tmp = env->stack_a;
 	i = 0;
 	while (i < env->size_a)
 	{

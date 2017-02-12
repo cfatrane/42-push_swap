@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/11 19:44:29 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 15:36:32 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,28 +51,29 @@ void		reverse_rotate_a(t_push_swap *env);
 void		reverse_rotate_b(t_push_swap *env);
 void		reverse_rotate_r(t_push_swap *env);
 
-int			ft_stack_check(t_push_swap *env);
 
 t_stack		*ft_create_elem_stack(ssize_t nbr);
-
 void		ft_stack_push_back(t_stack **stack, ssize_t nbr);
 void		ft_stack_push_front(t_stack **stack, ssize_t nbr);
 
 void		ft_stack_delone_front(t_stack **stack);
 void		ft_stack_delone_back(t_stack **stack);
 
+int			ft_stack_check(t_push_swap *env);
 size_t		ft_stack_size(t_stack *stack);
 void		ft_size(t_push_swap *env);
 void		ft_stack_display(t_push_swap *env);
 t_stack		*ft_stack_at(t_stack *begin_list, size_t nbr);
 ssize_t		ft_stack_val_at(t_stack *begin_list, size_t nbr);
+void		ft_stack_val_bord(t_push_swap *env);
 
-void	ft_stack_val_bord(t_push_swap *env);
+void	algo_naif_4(t_push_swap *env);
+int		tabdone_a(t_push_swap *push_swap);
+int		tabdone_b(t_push_swap *push_swap);
 
 int		algo_naif(t_push_swap *env);
 void	algo_naif_2(t_push_swap *env);
 void	algo_naif_3(t_push_swap *env);
-void	algo_naif_4(t_push_swap *env);
 void	algo_naif_5(t_push_swap *env);
 void	algo_min(t_push_swap *env);
 void	algo_mergesort(t_push_swap *env);

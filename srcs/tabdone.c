@@ -1,29 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_naif_2.c                                      :+:      :+:    :+:   */
+/*   tabdone.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/09 16:08:10 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/10 19:06:18 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/12 15:39:00 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/12 15:39:10 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-int		tabdone_a(t_push_swap *push_swap);
-
-void	algo_naif_2(t_push_swap *env)
-{
-	while (tabdone_a(env) != 0)
-	{
-		if (env->stack_a->nbr > env->med)
-		push_b(env);
-		else
-			rotate_a(env);
-	}
-}
 
 int		tabdone_a(t_push_swap *push_swap)
 {
