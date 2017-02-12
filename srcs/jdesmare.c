@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:39:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 15:26:56 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:13:14 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	ft_card_sort(t_push_swap *env)
 		closest = ft_find_closest_upper(env, env->stack_b->nbr);
 		if (closest == -1000000)
 		{
-			ft_stack_val_bord(env);
+			stack_val_bord(env);
 			closest = env->min_a;
 		}
 		closest_pos = ft_find_num_pos(env->stack_a, closest, env->size_a);

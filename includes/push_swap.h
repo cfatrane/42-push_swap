@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 15:36:32 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:13:05 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void		ft_size(t_push_swap *env);
 void		ft_stack_display(t_push_swap *env);
 t_stack		*ft_stack_at(t_stack *begin_list, size_t nbr);
 ssize_t		ft_stack_val_at(t_stack *begin_list, size_t nbr);
-void		ft_stack_val_bord(t_push_swap *env);
+void		stack_val_bord(t_push_swap *env);
 
 void	algo_naif_4(t_push_swap *env);
 int		tabdone_a(t_push_swap *push_swap);
