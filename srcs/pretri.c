@@ -6,37 +6,54 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 14:31:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:03:51 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:51:09 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+void	define_med(t_push_swap *env, int *tab, size_t i)
+{
+	if (env->size_a >= 50 && env->size_a <= 250)
+	{
+		env->med = tab[i / 5];
+		env->pad = env->size_a / 5;
+	}
+	else if (env->size_a > 250 && env->size_a < 500)
+	{
+		env->med = tab[i / 5];
+		env->pad = env->size_a / 5;
+	}
+	else if (env->size_a >= 500 && env->size_a <= 10000)
+	{
+		env->med = tab[i / 10];
+		env->pad = env->size_a / 10;
+	}
+}
+
 void	convert_tab(t_push_swap *env)
 {
 	t_stack	*tmp;
-	int		*tableau;
+	int		*tab;
 	size_t	i;
-	int		middle;
 
-	tableau = (int*)malloc(sizeof(tableau) * (env->size_a - 1));
+	tab = (int*)malloc(sizeof(tab) * (env->size_a));
 	i = 0;
 	tmp = env->stack_a;
 	while (tmp)
 	{
-		tableau[i] = tmp->nbr;
+		tab[i] = tmp->nbr;
 		i++;
 		tmp = tmp->next;
 	}
-	tri_rapide(tableau, env->size_a - 1);
+	tri_rapide(tab, env->size_a);
 	i = 0;
-	while (i < env->size_a - 1)
+	while (i < env->size_a)
 		i++;
-	middle = (env->size_a - 1) / 2;
-	env->med = tableau[middle];
+	define_med(env, tab, i);
 }
 
-void	tri_rapide(int *tableau, int taille)
+void	tri_rapide(int *tab, int taille)
 {
 	int	mur;
 	int	courant;
@@ -47,21 +64,21 @@ void	tri_rapide(int *tableau, int taille)
 	courant = 0;
 	if (taille < 2)
 		return ;
-	pivot = tableau[taille - 1];
+	pivot = tab[taille - 1];
 	while (courant < taille)
 	{
-		if (tableau[courant] <= pivot)
+		if (tab[courant] <= pivot)
 		{
 			if (mur != courant)
 			{
-				tmp = tableau[courant];
-				tableau[courant] = tableau[mur];
-				tableau[mur] = tmp;
+				tmp = tab[courant];
+				tab[courant] = tab[mur];
+				tab[mur] = tmp;
 			}
 			mur++;
 		}
 		courant++;
 	}
-	tri_rapide(tableau, mur - 1);
-	tri_rapide(tableau + mur - 1, taille - mur + 1);
+	tri_rapide(tab, mur - 1);
+	tri_rapide(tab + mur - 1, taille - mur + 1);
 }

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:51:06 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:07:27 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:54:11 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	swap_a(t_push_swap *env)
 		env->stack_a->nbr = env->stack_a->next->nbr;
 		env->stack_a->next->nbr = tmp;
 		if (env->action == 1)
-			ft_putendl(SA);
-		ft_stack_display(env);
+			ft_putstr(SA);
 	}
+	ft_stack_display(env);
 	ft_size(env);
 }
 
@@ -40,9 +40,9 @@ void	swap_b(t_push_swap *env)
 		env->stack_b->nbr = env->stack_b->next->nbr;
 		env->stack_b->next->nbr = tmp;
 		if (env->action == 1)
-			ft_putendl(SB);
-		ft_stack_display(env);
+			ft_putstr(SB);
 	}
+	ft_stack_display(env);
 	ft_size(env);
 }
 
@@ -64,7 +64,7 @@ void	swap_s(t_push_swap *env)
 		env->stack_b->next->nbr = tmp;
 	}
 	if (env->action == 1)
-		ft_putendl(SS);
+		ft_putstr(SS);
 	ft_stack_display(env);
 	ft_size(env);
 }

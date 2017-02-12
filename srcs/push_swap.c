@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:07:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:17:29 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:51:46 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int		push_swap(t_push_swap *env)
 {
 	stack_val_bord(env);
 	ft_size(env);
+	convert_tab(env);
 	if (ft_stack_check(env) == 0)
 		return (0);
 	else

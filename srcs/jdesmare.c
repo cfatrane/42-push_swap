@@ -6,16 +6,16 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:39:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:13:14 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 16:23:37 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-static int	ft_find_closest_upper(t_push_swap *env, int nb)
+int	ft_find_closest_upper(t_push_swap *env, int nb)
 {
-	int	closest;
-	int	current;
+	int		closest;
+	int		current;
 	size_t	i;
 	t_stack	*tmp;
 
@@ -36,13 +36,13 @@ static int	ft_find_closest_upper(t_push_swap *env, int nb)
 	return (closest);
 }
 
-
 size_t	ft_find_num_pos(t_stack *tab, ssize_t num, size_t size)
 {
 	size_t	i;
-	t_stack *tmp = tab;
+	t_stack	*tmp;
 
 	i = 0;
+	tmp = tab;
 	while (tmp->nbr != num && i <= size)
 	{
 		i++;
@@ -58,16 +58,13 @@ void	ft_card_sort(t_push_swap *env)
 {
 	ssize_t	closest;
 	size_t	closest_pos;
-	size_t pa = 0;
 
 	while (env->size_b > 0)
 	{
 		closest = ft_find_closest_upper(env, env->stack_b->nbr);
+		stack_val_bord(env);
 		if (closest == -1000000)
-		{
-			stack_val_bord(env);
 			closest = env->min_a;
-		}
 		closest_pos = ft_find_num_pos(env->stack_a, closest, env->size_a);
 		if (closest_pos > (env->size_a - 1) / 2)
 			while (env->stack_a->nbr != closest)
@@ -76,7 +73,6 @@ void	ft_card_sort(t_push_swap *env)
 			while (env->stack_a->nbr != closest)
 				rotate_a(env);
 		push_a(env);
-		pa++;
 	}
 	while (ft_stack_check(env) != 0)
 	{

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:33:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/10 19:58:29 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:29:08 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ int	ft_stack_format(char *av)
 			return (-1);
 		av++;
 	}
+	return (0);
+}
+
+int	ft_stack_max(long long int av)
+{
+	if (av > INT_MAX || av < INT_MIN)
+		return (-1);
 	return (0);
 }
 
@@ -47,9 +54,9 @@ int	ft_stack_doublon(t_stack *stack)
 	return (0);
 }
 
-int	ft_stack_max(ssize_t av)
+int	ft_error(char *av)
 {
-	if (av < INT_MIN && av > INT_MAX)
+	if (ft_stack_format(av) == -1 || ft_stack_max(ft_atoll(av)) == -1)
 		return (-1);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/31 18:55:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 14:40:23 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:29:10 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,7 @@ t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *checker)
 		}
 		while (i < ac)
 		{
-			if (ft_stack_format(av[i]) == -1 ||
-					ft_stack_max(ft_atoll(av[i])) == -1)
+			if (ft_error(av[i]) == -1)
 				return (NULL);
 			ft_stack_push_back(&stack, ft_atoll(av[i]));
 			i++;
