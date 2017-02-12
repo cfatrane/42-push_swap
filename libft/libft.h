@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/22 10:45:03 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/01 18:54:53 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/12 17:41:20 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 
 # include <stdio.h>
 
-# define BUFF_SIZE 32
+# define BUFF_SIZE 50000
 
 typedef struct		s_gnl
 {
@@ -68,6 +68,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_atoi(const char *str);
 long				ft_atol(const char *str);
 long long			ft_atoll(const char *str);
+unsigned long long	ft_atou(const char *str);
 
 void				ft_putchar(char c);
 void				ft_putchar_fd(char c, int fd);
@@ -155,6 +156,7 @@ void				ft_print_hex(size_t n);
 unsigned char		ft_swap_bits(unsigned char octet);
 void				ft_print_bits(unsigned char octet);
 int					ft_max(int *tab, unsigned int len);
+int					ft_min(int *tab, unsigned int len);
 
 size_t				ft_tabintlen(int *tab);
 

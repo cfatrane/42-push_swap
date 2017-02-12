@@ -1,35 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_atou.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 16:07:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 17:49:37 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/12 17:39:54 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/12 17:43:30 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void	ft_size(t_push_swap *env)
+unsigned long long	ft_atou(const char *str)
 {
-	env->size_a = ft_stack_size(env->stack_a);
-	env->size_b = ft_stack_size(env->stack_b);
-}
+	unsigned long long	nb;
 
-int		push_swap(t_push_swap *env)
-{
-	stack_val_bord(env);
-	ft_size(env);
-	convert_tab(env);
-	if (ft_stack_check(env) == 0)
-		return (0);
-	else
-		algo_hundred(env);
-	if (ft_stack_check(env) == 0)
-		ft_putendl("OK");
-	else
-		ft_putendl("KO");
-	return (0);
+	nb = 0;
+	while (ft_isspace((int)*str))
+		str++;
+	if (*str == '+')
+		str++;
+	while (ft_isdigit((int)*str))
+	{
+		nb = nb * 10 + *str - '0';
+		str++;
+	}
+	return (nb);
 }
