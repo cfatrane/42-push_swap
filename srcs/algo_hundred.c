@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_naif_4.c                                      :+:      :+:    :+:   */
+/*   algo_hundred.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/10 14:36:26 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:13:42 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/12 16:17:33 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/12 16:17:38 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	algo_naif_4(t_push_swap *env)
+void	algo_hundred(t_push_swap *env)
 {
 	env->med = 20;
 	while (1)
