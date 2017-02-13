@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:10:17 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 16:12:50 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 20:20:26 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,50 +14,50 @@
 
 void	stack_val_bord_a(t_push_swap *env)
 {
-	t_stack	*tmpstack_a;
+	t_stack	*tmpstack;
 
 	if (env->size_a > 0)
 	{
-		tmpstack_a = env->stack_a;
+		tmpstack = env->stack_a;
 		env->max_a = env->stack_a->nbr;
-		while (tmpstack_a)
+		while (tmpstack)
 		{
-			if (env->max_a < tmpstack_a->nbr)
-				env->max_a = tmpstack_a->nbr;
-			tmpstack_a = tmpstack_a->next;
+			if (env->max_a < tmpstack->nbr)
+				env->max_a = tmpstack->nbr;
+			tmpstack = tmpstack->next;
 		}
-		tmpstack_a = env->stack_a;
+		tmpstack = env->stack_a;
 		env->min_a = env->stack_a->nbr;
-		while (tmpstack_a)
+		while (tmpstack)
 		{
-			if (env->min_a > tmpstack_a->nbr)
-				env->min_a = tmpstack_a->nbr;
-			tmpstack_a = tmpstack_a->next;
+			if (env->min_a > tmpstack->nbr)
+				env->min_a = tmpstack->nbr;
+			tmpstack = tmpstack->next;
 		}
 	}
 }
 
 void	stack_val_bord_b(t_push_swap *env)
 {
-	t_stack	*tmpstack_b;
+	t_stack	*tmpstack;
 
 	if (env->size_b > 0)
 	{
-		tmpstack_b = env->stack_b;
+		tmpstack = env->stack_b;
 		env->max_b = env->stack_b->nbr;
-		while (tmpstack_b)
+		while (tmpstack)
 		{
-			if (env->max_b < tmpstack_b->nbr)
-				env->max_b = tmpstack_b->nbr;
-			tmpstack_b = tmpstack_b->next;
+			if (env->max_b < tmpstack->nbr)
+				env->max_b = tmpstack->nbr;
+			tmpstack = tmpstack->next;
 		}
-		tmpstack_b = env->stack_b;
+		tmpstack = env->stack_b;
 		env->min_b = env->stack_b->nbr;
-		while (tmpstack_b)
+		while (tmpstack)
 		{
-			if (env->min_b > tmpstack_b->nbr)
-				env->min_b = tmpstack_b->nbr;
-			tmpstack_b = tmpstack_b->next;
+			if (env->min_b > tmpstack->nbr)
+				env->min_b = tmpstack->nbr;
+			tmpstack = tmpstack->next;
 		}
 	}
 }
