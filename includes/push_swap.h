@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 10:14:25 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:19:14 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,6 @@ void		algo_card_sort(t_push_swap *env);
 
 int			tabdone_a(t_push_swap *push_swap);
 int			tabdone_b(t_push_swap *push_swap);
-
 
 int			*convert_tab(t_push_swap *env);
 void		define_med(t_push_swap *env, int *tab);
