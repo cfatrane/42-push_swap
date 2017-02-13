@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 17:53:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 18:09:03 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:01:38 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	find_closest_upper(t_push_swap *env, int nb)
+int		find_closest_upper(t_push_swap *env, int nb)
 {
 	int		closest;
 	int		current;
@@ -54,6 +54,18 @@ size_t	find_num_pos(t_stack *tab, ssize_t num, size_t size)
 		return (-1);
 }
 
+void	finish(t_push_swap *env)
+{
+	while (ft_stack_check(env) != 0)
+	{
+		if (find_num_pos(env->stack_a, env->min_a,
+					env->size_a) < env->size_a / 2)
+			rotate_a(env);
+		else
+			reverse_rotate_a(env);
+	}
+}
+
 void	algo_card_sort(t_push_swap *env)
 {
 	ssize_t	closest;
@@ -74,12 +86,5 @@ void	algo_card_sort(t_push_swap *env)
 				rotate_a(env);
 		push_a(env);
 	}
-	while (ft_stack_check(env) != 0)
-	{
-		if (find_num_pos(env->stack_a, env->min_a,
-					env->size_a) < env->size_a / 2)
-			rotate_a(env);
-		else
-			reverse_rotate_a(env);
-	}
+	finish(env);
 }

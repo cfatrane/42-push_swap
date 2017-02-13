@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:07:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 19:25:13 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 09:39:34 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ void	ft_size(t_push_swap *env)
 int		push_swap(t_push_swap *env)
 {
 	int	*tab;
+
 	stack_val_bord(env);
 	ft_size(env);
 	tab = convert_tab(env);

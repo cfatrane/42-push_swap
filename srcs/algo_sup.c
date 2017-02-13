@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 18:10:38 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 19:36:26 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:00:09 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,3 @@ void	algo_sup(t_push_swap *env)
 	}
 	algo_card_sort(env);
 }
-

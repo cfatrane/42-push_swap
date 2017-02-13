@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 14:31:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 19:16:25 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 09:41:27 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int		*convert_tab(t_push_swap *env)
 	int		*tab;
 	size_t	i;
 
-	tab = (int*)malloc(sizeof(tab) * (env->size_a));
+	if (!(tab = ft_tabnew(env->size_a)))
+		return (NULL);
 	i = 0;
 	tmp = env->stack_a;
 	while (tmp)
@@ -49,7 +50,6 @@ int		*convert_tab(t_push_swap *env)
 		i++;
 		tmp = tmp->next;
 	}
-//	tri_rapide(tab, env->size_a);
 	return (tab);
 }
 
