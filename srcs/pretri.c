@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 14:31:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 17:00:26 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 18:32:29 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,10 @@ int		*convert_tab(t_push_swap *env)
 	i = 0;
 	while (i < env->size_a)
 	{
-		ft_printf("%d ", tab[i]);
+//		ft_printf("%d ", tab[i]);
 		i++;
 	}
-	ft_putchar('\n');
+//	ft_putchar('\n');
 	return (tab);
 }
 

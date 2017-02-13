@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 18:10:38 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 16:25:48 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 18:31:55 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ void	algo_sup(t_push_swap *env)
 {
 	while (1)
 	{
-	ft_printf("MEDIANE = %d PAD = %d\n", env->med, env->pad);
-
+//		ft_printf("MEDIANE = %d PAD = %d\n", env->med, env->pad);
 		stack_val_bord(env);
 		while (tabdone_a(env) != 0)
 		{
