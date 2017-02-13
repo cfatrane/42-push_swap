@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:33:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 11:31:25 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 11:40:12 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,11 +59,4 @@ int		ft_error(char *av)
 	if (ft_stack_format(av) == -1 || ft_stack_max(ft_atoll(av)) == -1)
 		return (-1);
 	return (0);
-}
-
-t_stack	*ft_exit(t_push_swap *env)
-{
-	ft_stack_clear(&env->stack_a);
-	free(env);
-	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 11:29:30 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 11:40:14 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int			ft_error(char *av);
 int			ft_stack_format(char *av);
 int			ft_stack_max(long long int av);
 int			ft_stack_doublon(t_stack *stack);
-t_stack		*ft_exit(t_push_swap *env);
 
 void		swap_a(t_push_swap *env);
 void		swap_b(t_push_swap *env);
