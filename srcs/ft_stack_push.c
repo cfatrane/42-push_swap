@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 15:17:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 10:37:27 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 11:29:34 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ t_stack	*ft_stack_push_params(int ac, char **av, t_push_swap *env)
 		while (i < ac)
 		{
 			if (ft_error(av[i]) == -1)
-				return (NULL);
+				return (ft_exit(env));
 			ft_stack_push_back(&stack, ft_atoll(av[i]));
 			i++;
 		}

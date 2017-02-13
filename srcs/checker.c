@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:38:08 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 10:55:21 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 11:04:15 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,13 @@ int		checker(t_push_swap *env)
 
 	while ((get_next_line(0, &line) > 0))
 	{
-		ft_size(env);
 		if (operation(env, line) == -1)
 		{
-			ft_strdel(&line);
+			free(line);
 			ft_putendl_fd("Error", 2);
 			return (0);
 		}
-		ft_strdel(&line);
+		free(line);
 	}
 	if (ft_stack_check(env) == 0)
 		ft_putendl("OK");
