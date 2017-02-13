@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 18:48:07 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:14:25 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void		ft_stack_push_front(t_stack **stack, ssize_t nbr);
 
 void		ft_stack_delone_front(t_stack **stack);
 void		ft_stack_delone_back(t_stack **stack);
+void		ft_stack_clear(t_stack **begin_list);
 
 int			ft_stack_check(t_push_swap *env);
 size_t		ft_stack_size(t_stack *stack);

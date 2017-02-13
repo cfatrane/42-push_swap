@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:07:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 09:39:34 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:17:47 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int		push_swap(t_push_swap *env)
 	tab = convert_tab(env);
 	tri_rapide(tab, env->size_a);
 	define_med(env, tab);
+	free(tab);
 	ft_stack_display(env);
 	if (ft_stack_check(env) == 0)
 		return (0);

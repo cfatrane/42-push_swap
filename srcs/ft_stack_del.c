@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 15:18:04 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/09 13:28:43 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:14:11 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,13 @@ void	ft_stack_delone_back(t_stack **stack)
 	if (tmp != NULL)
 		tmp->next = NULL;
 	free(to_free);
+}
+void	ft_stack_clear(t_stack **begin_list)
+{
+	if (*begin_list != NULL)
+	{
+		ft_stack_clear(&((*begin_list)->next));
+		free(*begin_list);
+		*begin_list = NULL;
+	}
 }
