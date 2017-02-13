@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 10:19:14 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:46:15 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void		reverse_rotate_b(t_push_swap *env);
 void		reverse_rotate_r(t_push_swap *env);
 
 t_stack		*ft_create_elem_stack(ssize_t nbr);
+t_stack		*ft_stack_push_params(int ac, char **av, t_push_swap *env);
 void		ft_stack_push_back(t_stack **stack, ssize_t nbr);
 void		ft_stack_push_front(t_stack **stack, ssize_t nbr);
 
@@ -69,6 +70,7 @@ ssize_t		ft_stack_val_at(t_stack *begin_list, size_t nbr);
 void		stack_val_bord(t_push_swap *env);
 
 void		algo_min(t_push_swap *env);
+void		algo_med(t_push_swap *env);
 void		algo_sup(t_push_swap *env);
 void		algo_card_sort(t_push_swap *env);
 

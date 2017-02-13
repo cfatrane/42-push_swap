@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 17:52:32 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 17:52:34 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:43:55 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ size_t	ft_stack_size(t_stack *stack)
 	if (stack == NULL)
 		return (0);
 	return (ft_stack_size(stack->next) + 1);
+}
+
+void	ft_size(t_push_swap *env)
+{
+	env->size_a = ft_stack_size(env->stack_a);
+	env->size_b = ft_stack_size(env->stack_b);
 }
 
 void	ft_stack_display(t_push_swap *env)
@@ -43,30 +49,6 @@ void	ft_stack_display(t_push_swap *env)
 		}
 		ft_putchar('\n');
 	}
-}
-
-t_stack	*ft_stack_at(t_stack *begin_list, size_t nbr)
-{
-	if (begin_list == NULL)
-		return (NULL);
-	if (nbr == 1 && begin_list->next == NULL)
-		return (NULL);
-	if (nbr == 0)
-		return (begin_list);
-	else
-		return (ft_stack_at(begin_list->next, nbr - 1));
-}
-
-ssize_t	ft_stack_val_at(t_stack *begin_list, size_t nbr)
-{
-	if (begin_list == NULL)
-		return (-1);
-	if (nbr == 1 && begin_list->next == NULL)
-		return (-1);
-	if (nbr == 0)
-		return (begin_list->nbr);
-	else
-		return (ft_stack_val_at(begin_list->next, nbr - 1));
 }
 
 int		ft_stack_check(t_push_swap *env)

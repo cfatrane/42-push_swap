@@ -6,17 +6,11 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:38:08 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 17:56:26 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 10:55:21 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
-
-void	ft_size(t_push_swap *env)
-{
-	env->size_a = ft_stack_size(env->stack_a);
-	env->size_b = ft_stack_size(env->stack_b);
-}
 
 int		operation(t_push_swap *env, char *line)
 {
@@ -40,6 +34,8 @@ int		operation(t_push_swap *env, char *line)
 		reverse_rotate_a(env);
 	else if (ft_strcmp(line, RRB) == 0)
 		reverse_rotate_b(env);
+	else if (ft_strcmp(line, RRR) == 0)
+		reverse_rotate_r(env);
 	else
 		return (-1);
 	return (0);
@@ -54,11 +50,11 @@ int		checker(t_push_swap *env)
 		ft_size(env);
 		if (operation(env, line) == -1)
 		{
-			free(line);
+			ft_strdel(&line);
 			ft_putendl_fd("Error", 2);
 			return (0);
 		}
-		free(line);
+		ft_strdel(&line);
 	}
 	if (ft_stack_check(env) == 0)
 		ft_putendl("OK");
