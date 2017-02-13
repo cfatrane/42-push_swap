@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:07:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 10:46:17 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 16:37:27 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		push_swap(t_push_swap *env)
 	define_med(env, tab);
 	free(tab);
 	ft_stack_display(env);
+	ft_printf("MEDIANE = %d PAD = %d SIZE = %d\n", env->med, env->pad, env->size_a);
 	if (ft_stack_check(env) == 0)
 		return (0);
 	else if (env->size_a <= 10)

@@ -1,34 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   algo_sup.c                                         :+:      :+:    :+:   */
+/*   ft_ismultiple.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 18:10:38 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 16:25:48 by cfatrane         ###   ########.fr       */
+/*   Created: 2017/02/13 16:57:37 by cfatrane          #+#    #+#             */
+/*   Updated: 2017/02/13 16:58:13 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-void	algo_sup(t_push_swap *env)
+int	ft_ismultiple(int nb, int mlt)
 {
-	while (1)
-	{
-	ft_printf("MEDIANE = %d PAD = %d\n", env->med, env->pad);
+	long long int	nbr;
+	int				ret;
 
-		stack_val_bord(env);
-		while (tabdone_a(env) != 0)
-		{
-			if (env->stack_a->nbr < env->med)
-				push_b(env);
-			else
-				rotate_a(env);
-		}
-		env->med += env->pad;
-		if (env->med > env->max_a)
-			break ;
-	}
-	algo_card_sort(env);
+	nbr = nb;
+	ret = nbr % mlt;
+	return (ret == 0 ? 1 : -1);
 }
+
