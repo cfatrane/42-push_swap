@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 16:57:37 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 16:58:13 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 20:21:54 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,4 +21,3 @@ int	ft_ismultiple(int nb, int mlt)
 	ret = nbr % mlt;
 	return (ret == 0 ? 1 : -1);
 }
-
