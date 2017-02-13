@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/13 17:00:39 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/13 20:15:01 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,7 +61,6 @@ SRC_NAME_P = 	main_push.c			\
 				finish.c			\
 				tabdone.c			\
 				stack_val_bord.c	\
-				define_med.c		\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

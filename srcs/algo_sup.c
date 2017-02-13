@@ -6,17 +6,34 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 18:10:38 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 18:31:55 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/13 20:12:30 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
+void	algo_sup_bis(t_push_swap *env)
+{
+	while (env->size_a != 1)
+	{
+		env->med++;
+		while (tabdone_a(env) != 0)
+		{
+			if (env->stack_a->nbr < env->med)
+				push_b(env);
+			else
+				rotate_a(env);
+		}
+	}
+}
+
 void	algo_sup(t_push_swap *env)
 {
+	size_t tmp;
+
+	tmp = env->size_a;
 	while (1)
 	{
-//		ft_printf("MEDIANE = %d PAD = %d\n", env->med, env->pad);
 		stack_val_bord(env);
 		while (tabdone_a(env) != 0)
 		{
@@ -25,8 +42,11 @@ void	algo_sup(t_push_swap *env)
 			else
 				rotate_a(env);
 		}
-		env->med += env->pad;
-		if (env->med > env->max_a)
+		if (tmp - (size_t)env->med <= (size_t)env->pad)
+			algo_sup_bis(env);
+		else
+			env->med += env->pad;
+		if (env->med > env->max_a || env->size_a == 1)
 			break ;
 	}
 	algo_card_sort(env);
