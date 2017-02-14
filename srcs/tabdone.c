@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 15:39:00 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 13:37:43 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 14:44:37 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		tabdone(t_stack *stack, ssize_t nbr)
+int	tabdone(t_stack *stack, ssize_t nbr)
 {
 	ssize_t	nbr_tmp;
 	t_stack	*tmpstack;

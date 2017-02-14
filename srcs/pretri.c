@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 14:31:58 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 13:33:55 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 14:38:39 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	define_med(t_push_swap *env, int *tab)
 	if (env->size_a <= 50)
 	{
 		env->med = tab[1];
-//		env->pad = env->size_a / 1;
+		env->pad = env->size_a / 1;
 	}
 	else if (env->size_a > 50 && env->size_a <= 250)
 	{
