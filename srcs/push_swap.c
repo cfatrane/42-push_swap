@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:07:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 18:35:37 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 13:33:19 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ int		push_swap(t_push_swap *env)
 	ft_stack_display(env);
 	if (ft_stack_check(env) == 0)
 		return (0);
-	else if (env->size_a <= 10)
+	else if (env->size_a <= 3)
 		algo_min(env);
-	else if (env->size_a > 10 && env->size_a < 50)
+	else if (env->size_a > 3 && env->size_a < 50)
 		algo_med(env);
 	else if (env->size_a >= 50)
 		algo_sup(env);

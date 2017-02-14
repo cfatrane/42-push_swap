@@ -6,40 +6,41 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 15:39:00 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/12 18:05:19 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 13:37:43 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int		tabdone_a(t_push_swap *env)
+int		tabdone(t_stack *stack, ssize_t nbr)
 {
 	ssize_t	nbr_tmp;
 	t_stack	*tmpstack;
 
-	tmpstack = env->stack_a;
+	tmpstack = stack;
 	while (tmpstack)
 	{
 		nbr_tmp = tmpstack->nbr;
-		if (nbr_tmp < env->med)
+		if (nbr_tmp < nbr)
 			return (-1);
 		tmpstack = tmpstack->next;
 	}
 	return (0);
 }
 
-int		tabdone_b(t_push_swap *env)
+int	stack_crescent(t_push_swap *env)
 {
 	ssize_t	nbr_tmp;
 	t_stack	*tmpstack;
 
-	tmpstack = env->stack_b;
-	while (tmpstack)
+	tmpstack = env->stack_a;
+	nbr_tmp = tmpstack->nbr;
+	while (tmpstack->next)
 	{
-		nbr_tmp = tmpstack->nbr;
-		if (nbr_tmp < env->med)
+		if (nbr_tmp > tmpstack->next->nbr)
 			return (-1);
 		tmpstack = tmpstack->next;
+		nbr_tmp = tmpstack->nbr;
 	}
 	return (0);
 }

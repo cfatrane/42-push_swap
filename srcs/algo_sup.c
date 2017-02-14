@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 18:10:38 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 20:12:30 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 13:16:48 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	algo_sup_bis(t_push_swap *env)
 	while (env->size_a != 1)
 	{
 		env->med++;
-		while (tabdone_a(env) != 0)
+		while (tabdone(env->stack_a, env->med) != 0)
 		{
 			if (env->stack_a->nbr < env->med)
 				push_b(env);
@@ -35,7 +35,7 @@ void	algo_sup(t_push_swap *env)
 	while (1)
 	{
 		stack_val_bord(env);
-		while (tabdone_a(env) != 0)
+		while (tabdone(env->stack_a, env->med) != 0)
 		{
 			if (env->stack_a->nbr < env->med)
 				push_b(env);
