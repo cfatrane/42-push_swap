@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/14 11:56:52 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/14 15:11:19 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -108,8 +108,7 @@ $(OBJ_PATH_P)%.o: $(SRC_PATH_P)%.c
 	@mkdir $(OBJ_PATH_P) 2> /dev/null || true
 	@$(CC) $(INC_PATH_P) -o $@ -c $<
 
-clean:
-	@make clean -C ./libft/
+clean: cleanlib
 	@echo "\033[33mRemoval of .o files of $(NAME_C) and $(NAME_P) ...\033[0m"
 	@rm -f $(OBJ_C)
 	@rm -f $(OBJ_P)
@@ -117,12 +116,17 @@ clean:
 	@rmdir $(OBJ_PATH_P) 2> /dev/null || true
 	@echo "\033[31mFiles .o deleted\n\033[0m"
 
-fclean: clean
-	@make fclean -C ./libft/
+cleanlib:
+	@make clean -C ./libft/
+
+fclean: clean fcleanlib
 	@echo "\033[33mRemoval of $(NAME_C) and $(NAME_P) ...\033[0m"
 	@rm -f $(NAME_C)
 	@rm -f $(NAME_P)
 	@echo "\033[31mBinary $(NAME_C) and $(NAME_P) deleted\033[0m"
+
+fcleanlib:
+	@make fclean -C ./libft/
 
 re: fclean all
 	@make re -C ./libft/
