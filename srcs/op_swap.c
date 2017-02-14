@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:51:06 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 18:32:50 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 15:31:25 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,9 @@ void	swap_s(t_push_swap *env)
 		env->stack_b->nbr = env->stack_b->next->nbr;
 		env->stack_b->next->nbr = tmp;
 	}
-	if (env->action == 1)
-		ft_putendl(SS);
+	if (env->size_a > 1 || env->size_b > 1)
+		if (env->action == 1)
+			ft_putendl(SS);
 	ft_stack_display(env);
 	ft_size(env);
 }
