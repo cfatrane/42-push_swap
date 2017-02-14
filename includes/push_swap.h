@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 13:40:19 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 15:01:22 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void		stack_val_bord(t_push_swap *env);
 void		algo_min(t_push_swap *env);
 void		algo_med(t_push_swap *env);
 void		algo_sup(t_push_swap *env);
+void		algo_max(t_push_swap *env);
 void		algo_card_sort(t_push_swap *env);
 
 int			tabdone(t_stack *stack, ssize_t nbr);

@@ -6,13 +6,13 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 18:11:35 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 14:44:15 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/14 14:59:32 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	algo_med_bis(t_push_swap *env)
+void	algo_min_bis(t_push_swap *env)
 {
 	while (stack_crescent(env) != 0)
 	{
@@ -37,7 +37,7 @@ void	algo_med(t_push_swap *env)
 				rotate_a(env);
 		}
 		if (env->size_a == 3)
-			algo_med_bis(env);
+			algo_min_bis(env);
 		env->med += 1;
 		if (env->med > env->max_a || env->size_a == 1
 				|| stack_crescent(env) == 0)
