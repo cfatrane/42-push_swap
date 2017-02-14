@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/13 20:15:01 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/14 11:56:52 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,11 +78,7 @@ OBJ_P = $(addprefix $(OBJ_PATH_P), $(OBJ_NAME_P))
 
 LDFLAGS = -L./libft/
 
-PRINTFFLAG = -L./ft_printf/
-
 LFT = -lft
-
-PRINTF = -lftprintf
 
 CC = gcc $(CFLAGS)
 
@@ -93,15 +89,15 @@ CFLAGS = -Wall -Wextra -Werror
 all: $(NAME_C) $(NAME_P)
 
 $(NAME_C): $(OBJ_C)
-	@make -C./ft_printf/
+	@make -C./libft/
 	@echo "\033[34mCreation of $(NAME_C) ...\033[0m"
-	@$(CC) $(LDFLAGS) $(PRINTFFLAG) $(LFT) $(PRINTF) $(OBJ_C) -o $@
+	@$(CC) $(LDFLAGS) $(LFT) $(OBJ_C) -o $@
 	@echo "\033[32m$(NAME_C) created\n\033[0m"
 
 $(NAME_P): $(OBJ_P)
-	@make -C./ft_printf/
+	@make -C./libft/
 	@echo "\033[34mCreation of $(NAME_P) ...\033[0m"
-	@$(CC) $(LDFLAGS) $(PRINTFFLAG) $(LFT) $(PRINTF) $(OBJ_P) -o $@
+	@$(CC) $(LDFLAGS) $(LFT) $(OBJ_P) -o $@
 	@echo "\033[32m$(NAME_P) created\n\033[0m"
 
 $(OBJ_PATH_C)%.o: $(SRC_PATH_C)%.c
@@ -113,7 +109,7 @@ $(OBJ_PATH_P)%.o: $(SRC_PATH_P)%.c
 	@$(CC) $(INC_PATH_P) -o $@ -c $<
 
 clean:
-	@make clean -C ./ft_printf/
+	@make clean -C ./libft/
 	@echo "\033[33mRemoval of .o files of $(NAME_C) and $(NAME_P) ...\033[0m"
 	@rm -f $(OBJ_C)
 	@rm -f $(OBJ_P)
@@ -122,14 +118,14 @@ clean:
 	@echo "\033[31mFiles .o deleted\n\033[0m"
 
 fclean: clean
-	@make fclean -C ./ft_printf/
+	@make fclean -C ./libft/
 	@echo "\033[33mRemoval of $(NAME_C) and $(NAME_P) ...\033[0m"
 	@rm -f $(NAME_C)
 	@rm -f $(NAME_P)
 	@echo "\033[31mBinary $(NAME_C) and $(NAME_P) deleted\033[0m"
 
 re: fclean all
-	@make re -C ./ft_printf/
+	@make re -C ./libft/
 
 git:
 	@git add .
