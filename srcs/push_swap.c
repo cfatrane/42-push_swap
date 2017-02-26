@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 16:07:59 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 15:01:25 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/17 19:05:52 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int		push_swap(t_push_swap *env)
 		return (0);
 	else if (env->size_a <= 3)
 		algo_min(env);
-	else if (env->size_a > 3 && env->size_a < 30)
+	else if (env->size_a > 3 && env->size_a <= 30)
 		algo_med(env);
-	else if (env->size_a >= 30 && env->size_a < 300)
+	else if (env->size_a > 30 && env->size_a <= 300)
 		algo_sup(env);
-	else if (env->size_a >= 300)
+	else if (env->size_a > 300)
 		algo_max(env);
 	return (0);
 }

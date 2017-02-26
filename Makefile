@@ -6,7 +6,7 @@
 #    By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/25 13:44:53 by cfatrane          #+#    #+#              #
-#*   Updated: 2017/02/14 15:11:19 by cfatrane         ###   ########.fr       *#
+#*   Updated: 2017/02/17 11:27:44 by cfatrane         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRC_NAME_C = 	main_checker.c		\
 				ft_stack_push.c		\
 				ft_stack_del.c		\
 				utils.c				\
+				stack_check.c		\
 
 OBJ_NAME_C = $(SRC_NAME_C:.c=.o)
 
@@ -55,12 +56,14 @@ SRC_NAME_P = 	main_push.c			\
 				ft_stack_push.c		\
 				ft_stack_del.c		\
 				utils.c				\
-				algo_sup.c			\
 				algo_min.c			\
+				algo_sup.c			\
+				algo_max.c			\
 				pretri.c			\
 				finish.c			\
 				tabdone.c			\
 				stack_val_bord.c	\
+				stack_check.c		\
 
 OBJ_NAME_P = $(SRC_NAME_P:.c=.o)
 

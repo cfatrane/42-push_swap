@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 15:01:22 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/17 18:50:14 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@
 # include "../libft/libft.h"
 # include "push_swap_struct.h"
 
-# define SA "sa"
-# define SB "sb"
-# define SS "ss"
-# define PA "pa"
-# define PB "pb"
-# define RA "ra"
-# define RB "rb"
-# define RR "rr"
-# define RRA "rra"
-# define RRB "rrb"
-# define RRR "rrr"
+# define SA "\033[33msa\033[0m"
+# define SB "\033[33msb\033[0m"
+# define SS "\033[33mss\033[0m"
+# define PA "\033[31mpa\033[0m"
+# define PB "\033[31mpb\033[0m"
+# define RA "\033[32mra\033[0m"
+# define RB "\033[32mrb\033[0m"
+# define RR "\033[32mrr\033[0m"
+# define RRA "\033[34mrra\033[0m"
+# define RRB "\033[34mrrb\033[0m"
+# define RRR "\033[34mrrr\033[0m"
 
 int			checker(t_push_swap *env);
 int			push_swap(t_push_swap *env);
 
 int			ft_error(char *av);
 int			ft_stack_format(char *av);
-int			ft_stack_max(long long int av);
+int			ft_stack_max(ssize_t av);
 int			ft_stack_doublon(t_stack *stack);
 
 void		swap_a(t_push_swap *env);
@@ -71,11 +71,18 @@ void		stack_val_bord(t_push_swap *env);
 void		algo_min(t_push_swap *env);
 void		algo_med(t_push_swap *env);
 void		algo_sup(t_push_swap *env);
+void		algo_sup_bis(t_push_swap *env);
 void		algo_max(t_push_swap *env);
 void		algo_card_sort(t_push_swap *env);
+void		algo_sup_mid_inf(t_push_swap *env);
+void		algo_sup_mid_sup(t_push_swap *env);
 
 int			tabdone(t_stack *stack, ssize_t nbr);
+int			tabundone(t_stack *stack, ssize_t nbr);
+int			mediane(t_push_swap *env, ssize_t med);
+int			unmediane(t_push_swap *env, ssize_t med);
 int			stack_crescent(t_push_swap *env);
+int			stack_descending(t_push_swap *env);
 
 int			*convert_tab(t_push_swap *env);
 void		define_med(t_push_swap *env, int *tab);

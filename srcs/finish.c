@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 17:53:19 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 10:01:38 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/17 13:56:52 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,8 +73,8 @@ void	algo_card_sort(t_push_swap *env)
 
 	while (env->size_b > 0)
 	{
-		closest = find_closest_upper(env, env->stack_b->nbr);
 		stack_val_bord(env);
+		closest = find_closest_upper(env, env->stack_b->nbr);
 		if (closest == -1000000)
 			closest = env->min_a;
 		closest_pos = find_num_pos(env->stack_a, closest, env->size_a);

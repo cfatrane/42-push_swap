@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/09 13:51:50 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/13 18:32:42 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/17 14:21:47 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	push_a(t_push_swap *env)
 {
+	ft_size(env);
 	if (env->size_b > 0)
 	{
 		ft_stack_push_front(&env->stack_a, env->stack_b->nbr);

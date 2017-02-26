@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:51 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 11:45:00 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/16 16:09:50 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,26 @@ typedef struct		s_push_swap
 	size_t			size_b;
 	int				display;
 	int				action;
+	int				last;
 	ssize_t			min_a;
 	ssize_t			max_a;
 	ssize_t			min_b;
 	ssize_t			max_b;
-	ssize_t			med;
 	size_t			pad;
+	ssize_t			quart_one;
+	ssize_t			med;
+	ssize_t			quart_three;
+	ssize_t			sa;
+	ssize_t			sb;
+	ssize_t			ss;
+	ssize_t			pa;
+	ssize_t			pb;
+	ssize_t			ra;
+	ssize_t			rb;
+	ssize_t			rr;
+	ssize_t			rra;
+	ssize_t			rrb;
+	ssize_t			rrr;
 }					t_push_swap;
 
 #endif

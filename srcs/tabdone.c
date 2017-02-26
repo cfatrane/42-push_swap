@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/12 15:39:00 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/14 14:44:37 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/02/17 11:25:46 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,36 @@ int	tabdone(t_stack *stack, ssize_t nbr)
 	return (0);
 }
 
-int	stack_crescent(t_push_swap *env)
+int	tabundone(t_stack *stack, ssize_t nbr)
 {
 	ssize_t	nbr_tmp;
 	t_stack	*tmpstack;
 
-	tmpstack = env->stack_a;
-	nbr_tmp = tmpstack->nbr;
-	while (tmpstack->next)
+	tmpstack = stack;
+	while (tmpstack)
 	{
-		if (nbr_tmp > tmpstack->next->nbr)
+		nbr_tmp = tmpstack->nbr;
+		if (nbr_tmp > nbr)
 			return (-1);
 		tmpstack = tmpstack->next;
-		nbr_tmp = tmpstack->nbr;
 	}
 	return (0);
+}
+
+int	mediane(t_push_swap *env, ssize_t med)
+{
+	int	dif;
+
+	dif = (env->max_a - med) / 2;
+	med = dif + med;
+	return (med);
+}
+
+int	unmediane(t_push_swap *env, ssize_t med)
+{
+	int	dif;
+
+	dif = (med - env->min_b) / 2;
+	med = med - dif;
+	return (med);
 }
