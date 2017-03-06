@@ -6,7 +6,7 @@
 /*   By: cfatrane <cfatrane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/01 19:24:29 by cfatrane          #+#    #+#             */
-/*   Updated: 2017/02/17 18:50:14 by cfatrane         ###   ########.fr       */
+/*   Updated: 2017/03/06 10:20:31 by cfatrane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 # include "../libft/libft.h"
 # include "push_swap_struct.h"
 
-# define SA "\033[33msa\033[0m"
-# define SB "\033[33msb\033[0m"
-# define SS "\033[33mss\033[0m"
-# define PA "\033[31mpa\033[0m"
-# define PB "\033[31mpb\033[0m"
-# define RA "\033[32mra\033[0m"
-# define RB "\033[32mrb\033[0m"
-# define RR "\033[32mrr\033[0m"
-# define RRA "\033[34mrra\033[0m"
-# define RRB "\033[34mrrb\033[0m"
-# define RRR "\033[34mrrr\033[0m"
+# define SA "sa"
+# define SB "sb"
+# define SS "ss"
+# define PA "pa"
+# define PB "pb"
+# define RA "ra"
+# define RB "rb"
+# define RR "rr"
+# define RRA "rra"
+# define RRB "rrb"
+# define RRR "rrr"
 
 int			checker(t_push_swap *env);
 int			push_swap(t_push_swap *env);
